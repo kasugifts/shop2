@@ -1,0 +1,508 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Affiliate Program | Kasu Gifts</title>
+  <!-- Load Supabase JS SDK for Google Auth -->
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+  
+  <style>
+    /* ── BASE STYLES ── */
+    :root {
+      --cream: #f9efe3;
+      --peach: #f6c6ab;
+      --coral: #da6e59;
+      --green: #4a6741;
+      --dark: #2a2a2a;
+      --mid: #666;
+      --light: #fff8f3;
+      --white: #ffffff;
+      --shadow: 0 12px 40px rgba(218, 110, 89, 0.08);
+      --radius: 16px;
+    }
+
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    body { font-family: 'Segoe UI', system-ui, sans-serif; background: var(--cream); color: var(--dark); min-height: 100vh; overflow-x: hidden; }
+
+    @keyframes fadeSlideUp { 0% { opacity: 0; transform: translateY(30px); } 100% { opacity: 1; transform: translateY(0); } }
+    @keyframes fadeIn { 0% { opacity: 0; } 100% { opacity: 1; } }
+    @keyframes spin { to { transform: rotate(360deg); } }
+    
+    .animate-up { animation: fadeSlideUp 0.6s cubic-bezier(0.16, 1, 0.3, 1) forwards; opacity: 0; }
+    .delay-1 { animation-delay: 0.1s; }
+    .delay-2 { animation-delay: 0.2s; }
+
+    /* ── HEADER ── */
+    header { background: var(--white); height: 64px; padding: 0 5%; display: flex; align-items: center; justify-content: space-between; box-shadow: 0 2px 15px rgba(0,0,0,0.05); position: sticky; top: 0; z-index: 900; }
+    .logo-wrap { display: flex; align-items: center; gap: 10px; cursor: pointer; text-decoration: none; transition: transform 0.2s; }
+    .logo-wrap:hover { transform: scale(1.02); }
+    .logo-img-box { width: 42px; height: 42px; border-radius: 10px; background: linear-gradient(135deg, var(--coral), var(--peach)); display: flex; align-items: center; justify-content: center; font-size: 1.4rem; }
+    .logo-name { font-size: 1.35rem; font-weight: 900; color: var(--coral); letter-spacing: -0.5px; }
+    .hbtn { display: flex; align-items: center; gap: 6px; padding: 9px 16px; border: none; border-radius: 10px; font-size: 0.85rem; font-weight: 700; cursor: pointer; transition: all 0.25s; background: var(--cream); color: var(--dark); text-decoration: none; font-family: inherit; }
+    .hbtn:hover { background: var(--peach); transform: translateY(-2px); }
+
+    .home-wrap { max-width: 800px; margin: 40px auto; padding: 0 20px; }
+    
+    /* ── HERO & EXAMPLES ── */
+    .hero-card { background: linear-gradient(135deg, var(--white), var(--light)); border: 2px solid var(--peach); border-radius: var(--radius); padding: 36px 32px; text-align: center; margin-bottom: 30px; box-shadow: var(--shadow); }
+    .hero-card h1 { color: var(--coral); font-size: clamp(1.8rem, 4vw, 2.5rem); font-weight: 900; line-height: 1.2; margin-bottom: 12px; }
+    .hero-card p { font-size: 1.05rem; color: var(--mid); line-height: 1.6; margin-bottom: 28px; }
+    
+    .steps-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 16px; margin-bottom: 24px; }
+    .step-box { background: var(--white); border-radius: var(--radius); padding: 20px; text-align: center; border: 1px solid #f0e8e0; transition: transform 0.3s, box-shadow 0.3s; }
+    .step-box:hover { transform: translateY(-5px); box-shadow: 0 10px 25px rgba(218,110,89,0.1); border-color: var(--peach); }
+    .step-ico { font-size: 2.5rem; margin-bottom: 10px; transition: transform 0.3s; }
+    .step-box:hover .step-ico { transform: scale(1.1) rotate(5deg); }
+    .step-title { font-weight: 900; font-size: 1.05rem; margin-bottom: 6px; color: var(--dark); }
+    .step-desc { font-size: 0.85rem; color: var(--mid); line-height: 1.4; }
+
+    .example-box { background: var(--white); border: 1.5px dashed var(--coral); border-radius: 12px; padding: 20px; text-align: left; margin: 0 auto; max-width: 500px; position: relative; overflow: hidden; }
+    .example-box::before { content: ''; position: absolute; top: 0; left: 0; width: 4px; height: 100%; background: var(--coral); }
+    .example-box h4 { color: var(--coral); font-size: 0.95rem; font-weight: 900; margin-bottom: 14px; text-transform: uppercase; letter-spacing: 0.5px; display: flex; align-items: center; gap: 8px; }
+    .example-math { display: flex; flex-direction: column; gap: 10px; font-size: 0.95rem; color: var(--dark); }
+    .example-math div { display: flex; justify-content: space-between; border-bottom: 1px solid #f0e8e0; padding-bottom: 8px; }
+    .example-math div:last-child { border-bottom: none; font-weight: 900; font-size: 1.15rem; padding-top: 8px; color: var(--green); }
+
+    /* ── AUTH CARD ── */
+    .auth-card { background: var(--white); border-radius: var(--radius); padding: 40px; box-shadow: var(--shadow); border: 1px solid #f0e8e0; margin-bottom: 40px; text-align: center; }
+    .auth-card h2 { font-size: 1.4rem; font-weight: 900; margin-bottom: 10px; color: var(--dark); }
+    .auth-card p { font-size: 0.95rem; color: var(--mid); margin-bottom: 24px; }
+    
+    .btn-google { width: 100%; max-width: 350px; margin: 0 auto; padding: 16px; background: white; color: var(--dark); border: 2px solid #e0d8d0; border-radius: 12px; font-size: 1.05rem; font-weight: 800; cursor: pointer; transition: all 0.25s; display: flex; align-items: center; justify-content: center; gap: 12px; font-family: inherit; box-shadow: 0 4px 10px rgba(0,0,0,0.03); }
+    .btn-google img { width: 24px; height: 24px; }
+    .btn-google:hover { border-color: var(--coral); background: var(--light); transform: translateY(-3px); box-shadow: 0 8px 20px rgba(218, 110, 89, 0.15); }
+
+    /* ── DASHBOARD STYLES ── */
+    .dash-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 24px; background: var(--white); padding: 24px; border-radius: var(--radius); border: 1px solid #f0e8e0; box-shadow: 0 4px 15px rgba(0,0,0,0.02); }
+    .dash-welcome { font-size: 1.3rem; font-weight: 900; }
+    .logout-btn { background: var(--light); border: 1.5px solid #f0d8c8; padding: 8px 16px; border-radius: 8px; color: var(--coral); font-weight: 800; cursor: pointer; transition: 0.2s; font-family: inherit; }
+    .logout-btn:hover { background: var(--peach); color: var(--dark); border-color: var(--peach); }
+    
+    .stats-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 16px; margin-bottom: 24px; }
+    .stat-card { background: linear-gradient(135deg, var(--light), var(--peach)); border: 1.5px solid #f0d8c8; border-radius: var(--radius); padding: 28px 24px; text-align: center; transition: transform 0.3s; }
+    .stat-card:hover { transform: translateY(-5px); }
+    .stat-val { font-size: 2.5rem; font-weight: 900; color: var(--coral); margin-bottom: 4px; line-height: 1; }
+    .stat-lbl { font-size: 0.85rem; font-weight: 800; color: var(--mid); text-transform: uppercase; letter-spacing: 0.5px; }
+
+    .link-card { background: var(--white); border: 2px dashed var(--coral); border-radius: var(--radius); padding: 32px 24px; text-align: center; margin-bottom: 24px; }
+    .link-card h3 { font-size: 1.2rem; font-weight: 900; margin-bottom: 12px; }
+    .ref-link-box { background: var(--light); padding: 16px; border-radius: 12px; font-family: monospace; font-size: 1.1rem; font-weight: bold; color: var(--dark); margin-bottom: 16px; border: 1px solid #f0e8e0; word-break: break-all; letter-spacing: -0.5px; }
+    .copy-btn { background: var(--dark); color: white; border: none; padding: 12px 28px; border-radius: 10px; font-weight: 800; font-size: 1rem; cursor: pointer; transition: all 0.2s; font-family: inherit; }
+    .copy-btn:hover { background: #000; transform: translateY(-2px); box-shadow: 0 4px 12px rgba(0,0,0,0.15); }
+
+    .payout-card { background: var(--white); border-radius: var(--radius); padding: 32px 24px; border: 1px solid #f0e8e0; text-align: center; }
+    .btn-primary { padding: 16px 40px; background: linear-gradient(135deg, var(--coral), #c45f4a); color: white; border: none; border-radius: 12px; font-size: 1.1rem; font-weight: 900; cursor: pointer; transition: all 0.25s; font-family: inherit; box-shadow: 0 6px 20px rgba(218, 110, 89, 0.25); display: inline-flex; align-items: center; justify-content: center; gap: 8px;}
+    .btn-primary:hover { transform: translateY(-3px); box-shadow: 0 8px 25px rgba(218, 110, 89, 0.35); }
+
+    /* ── MODAL OVERLAY ── */
+    .overlay { position: fixed; inset: 0; background: rgba(0,0,0,0.6); z-index: 1000; display: none; align-items: center; justify-content: center; backdrop-filter: blur(4px); }
+    .overlay.show { display: flex; animation: fadeIn 0.3s; }
+    .payout-modal { background: white; width: min(450px, 90%); border-radius: var(--radius); padding: 32px; position: relative; box-shadow: 0 20px 50px rgba(0,0,0,0.2); }
+    .modal-close { position: absolute; top: 16px; right: 16px; background: var(--light); border: none; font-size: 1.2rem; cursor: pointer; width: 36px; height: 36px; border-radius: 50%; display: flex; align-items: center; justify-content: center; transition: 0.2s; }
+    .modal-close:hover { background: var(--coral); color: white; transform: rotate(90deg); }
+
+    .form-group { margin-bottom: 20px; text-align: left; }
+    .form-group label { display: block; font-size: 0.82rem; font-weight: 800; color: var(--mid); margin-bottom: 8px; text-transform: uppercase; letter-spacing: 0.6px; }
+    .form-group input, .form-group select { width: 100%; padding: 15px 18px; border: 2px solid #f0e8e0; border-radius: 12px; font-size: 1rem; font-family: inherit; background: var(--light); transition: all 0.25s; color: var(--dark); outline: none; }
+    .form-group input:focus, .form-group select:focus { border-color: var(--coral); background: white; transform: translateY(-2px); box-shadow: 0 4px 15px rgba(218, 110, 89, 0.08); }
+    .form-group input.err { border-color: #e74c3c !important; background: #fff5f5; }
+    .err-msg { font-size: 0.78rem; color: #e74c3c; margin-top: 6px; display: none; font-weight: 700; animation: fadeIn 0.2s; }
+    .err-msg.show { display: block; }
+
+    .loader-sm { border: 2px solid #fff; border-top: 2px solid transparent; border-radius: 50%; width: 18px; height: 18px; animation: spin 0.8s linear infinite; display: none; }
+
+    .toast { position: fixed; bottom: 24px; left: 50%; transform: translateX(-50%) translateY(100px); background: var(--dark); color: white; padding: 14px 28px; border-radius: 50px; font-size: 0.95rem; font-weight: 800; z-index: 9999; transition: transform 0.4s cubic-bezier(0.16,1,0.3,1); white-space: nowrap; box-shadow: 0 8px 25px rgba(0,0,0,0.3); pointer-events: none; }
+    .toast.show { transform: translateX(-50%) translateY(0); }
+    
+    footer { background: var(--dark); color: #ccc; padding: 50px 5% 30px; margin-top: 80px; text-align: center; }
+  </style>
+</head>
+
+<body>
+  <header>
+    <a href="index.html" class="logo-wrap">
+      <div class="logo-img-box">🎁</div>
+      <span class="logo-name">Kasu Gifts</span>
+    </a>
+    <a class="hbtn" href="index.html">🛍️ <span>Back to Shop</span></a>
+  </header>
+
+  <div class="home-wrap">
+    
+    <!-- LOGIN SECTION (Shown if not logged in) -->
+    <div id="auth-section">
+      <div class="hero-card animate-up">
+        <h1>Earn 20% on Every Sale! 💸</h1>
+        <p>Join the Kasu Gifts Partner Program. Give your friends <strong>₹50 OFF</strong> and earn a <strong>20% Commission</strong> on the final price directly to your Bank or UPI.</p>
+        
+        <div class="steps-grid">
+          <div class="step-box">
+            <div class="step-ico">🚀</div>
+            <div class="step-title">1. One-Click Login</div>
+            <div class="step-desc">Sign in with Google to instantly generate your promo code.</div>
+          </div>
+          <div class="step-box">
+            <div class="step-ico">📢</div>
+            <div class="step-title">2. Share Link</div>
+            <div class="step-desc">Post your link on WhatsApp, Insta, or YouTube.</div>
+          </div>
+          <div class="step-box">
+            <div class="step-ico">💰</div>
+            <div class="step-title">3. Get Paid</div>
+            <div class="step-desc">Earn 20% per sale. Paid via UPI or Bank Transfer.</div>
+          </div>
+        </div>
+
+        <div class="example-box">
+          <h4>📊 Payout Example</h4>
+          <div class="example-math">
+            <div><span>Customer buys Pearl Gift Set:</span> <span>₹699</span></div>
+            <div><span>Uses your Promo Code (-₹50):</span> <span style="color:var(--coral); font-weight:bold;">- ₹50</span></div>
+            <div><span>Final Order Value:</span> <span>₹649</span></div>
+            <div><span>Your 20% Commission:</span> <span>₹130</span></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="auth-card animate-up delay-1">
+        <h2>Access Dashboard</h2>
+        <p>Log in or sign up to manage your links and request payouts.</p>
+        
+        <button class="btn-google" onclick="handleGoogleLogin()">
+          <img src="https://www.svgrepo.com/show/475656/google-color.svg" alt="Google">
+          Continue with Google
+        </button>
+      </div>
+    </div>
+
+    <!-- DASHBOARD SECTION (Shown if logged in) -->
+    <div id="dashboard-section" style="display: none;">
+      <div class="dash-header animate-up">
+        <div class="dash-welcome">👋 Welcome back, <span id="dash-name" style="color:var(--coral);">User</span>!</div>
+        <button class="logout-btn" onclick="logout()">Logout</button>
+      </div>
+
+      <div class="link-card animate-up delay-1">
+        <h3>🔗 Your Unique Referral Link & Code</h3>
+        <p style="font-size:0.95rem; color:var(--mid); margin-bottom:18px;">
+          Share this link! Anyone who buys through it automatically gets <strong>₹50 OFF</strong>.
+        </p>
+        <div class="ref-link-box" id="dash-link">https://kasugifts.com/?ref=CODE</div>
+        <button class="copy-btn" onclick="copyLink()">📋 Copy Link</button>
+        <div style="margin-top: 20px; font-size: 1.1rem; background: var(--light); padding: 12px; border-radius: 10px; display: inline-block;">
+          Your Promo Code: <strong style="color:var(--coral); font-size: 1.4rem;" id="dash-code">CODE</strong>
+        </div>
+      </div>
+
+      <div class="stats-grid animate-up delay-2">
+        <div class="stat-card">
+          <div class="stat-val" id="stat-sales">0</div>
+          <div class="stat-lbl">Successful Sales</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-val" id="stat-earnings">₹0</div>
+          <div class="stat-lbl">Total Earnings</div>
+        </div>
+      </div>
+
+      <div class="payout-card animate-up delay-2">
+        <h3 style="font-size:1.25rem; font-weight:900; margin-bottom:12px;">Withdraw Earnings</h3>
+        <p style="font-size:0.9rem; color:var(--mid); margin-bottom:20px;">Minimum payout threshold is ₹500. Payouts are processed within 48 hours.</p>
+        <button class="btn-primary" onclick="openPayoutModal()">Request Payout 💸</button>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- PAYOUT MODAL -->
+  <div class="overlay" id="payout-overlay">
+    <div class="payout-modal">
+      <button class="modal-close" onclick="closePayoutModal()">✕</button>
+      <h2 style="font-size:1.4rem; font-weight:900; margin-bottom:12px;">Request Payout</h2>
+      <p style="font-size:0.9rem; color:var(--mid); margin-bottom:24px; line-height:1.5;">Provide your details below. We process payouts directly to your account.</p>
+      
+      <div class="form-group">
+        <label>Payment Method</label>
+        <select id="pay-method" onchange="togglePayFields()">
+          <option value="upi">UPI Transfer</option>
+          <option value="bank">Direct Bank Transfer</option>
+        </select>
+      </div>
+
+      <div id="fields-upi">
+        <div class="form-group">
+          <label>UPI ID *</label>
+          <input type="text" id="pay-upi" placeholder="e.g. rahul@okhdfcbank" oninput="clearErr(this)">
+          <div class="err-msg" id="err-upi">Invalid UPI format. Must be like name@bank</div>
+        </div>
+      </div>
+
+      <div id="fields-bank" style="display:none;">
+        <div class="form-group">
+          <label>Account Holder Name *</label>
+          <input type="text" id="pay-holder" placeholder="Name as per bank passbook" oninput="clearErr(this)">
+          <div class="err-msg" id="err-holder">Please enter the full name</div>
+        </div>
+        <div class="form-group">
+          <label>Account Number *</label>
+          <input type="number" id="pay-acc" placeholder="Bank Account Number" oninput="clearErr(this)">
+          <div class="err-msg" id="err-acc">Invalid Account number (9-18 digits)</div>
+        </div>
+        <div class="form-group">
+          <label>IFSC Code *</label>
+          <input type="text" id="pay-ifsc" placeholder="e.g. SBIN0001234" style="text-transform: uppercase;" maxlength="11" oninput="clearErr(this)">
+          <div class="err-msg" id="err-ifsc">Invalid IFSC. Example: SBIN0001234</div>
+        </div>
+      </div>
+
+      <button class="btn-primary" id="btn-payout" onclick="submitPayout()" style="width: 100%;">
+        <div class="loader-sm" id="load-payout"></div> <span>Submit Request</span>
+      </button>
+    </div>
+  </div>
+
+  <div class="toast" id="toast"></div>
+
+  <footer>
+    <div style="font-size: 1.5rem; font-weight: 900; color: var(--peach); margin-bottom: 12px;">🎁 Kasu Gifts</div>
+    <div style="font-size: 0.85rem; color: #555;">© 2025 Kasu Gifts Affiliate Program. All rights reserved.</div>
+  </footer>
+
+  <script>
+    // ── SUPABASE CONNECTION & SDK INIT ──
+    const SB_URL = 'https://aawhuykfhjsjtwrstnvt.supabase.co';
+    const SB_KEY = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFhd2h1eWtmaGpzanR3cnN0bnZ0Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NzI2OTAxMDQsImV4cCI6MjA4ODI2NjEwNH0.6EE9pY3rFBmvgs6c5hHQ4WMnHp8XIm-dV9V-J2129sk';
+
+    // Initialize the JS Client
+    const supabase = window.supabase.createClient(SB_URL, SB_KEY);
+
+    // Alert if not on a server
+    if (window.location.protocol === 'file:') {
+      alert("⚠️ Google Login will not work when opening the file directly (file://). Please use a local server or upload it to your website.");
+    }
+
+    // REST function (for custom database table logic)
+    async function sb(path, method = 'GET', body = null) {
+      const h = { 'apikey': SB_KEY, 'Authorization': `Bearer ${SB_KEY}`, 'Content-Type': 'application/json' };
+      if (method === 'POST') h['Prefer'] = 'return=representation';
+      if (method === 'PATCH') h['Prefer'] = 'return=minimal';
+      const ctrl = new AbortController();
+      const tid = setTimeout(() => ctrl.abort(), 8000);
+      try {
+        const r = await fetch(`${SB_URL}/rest/v1/${path}`, { method, headers: h, signal: ctrl.signal, body: body ? JSON.stringify(body) : undefined });
+        clearTimeout(tid);
+        const txt = await r.text();
+        if (!r.ok) throw new Error(txt);
+        return txt ? JSON.parse(txt) : [];
+      } catch (e) { clearTimeout(tid); throw e; }
+    }
+
+    function showToast(msg) {
+      const t = document.getElementById('toast'); 
+      t.textContent = msg; 
+      t.classList.add('show'); 
+      setTimeout(() => t.classList.remove('show'), 4000);
+    }
+
+    function throwErr(inputId, errId) {
+      document.getElementById(inputId).classList.add('err');
+      document.getElementById(errId).classList.add('show');
+    }
+
+    function clearErr(el) {
+      el.classList.remove('err');
+      const errBox = document.getElementById('err-' + el.id);
+      if(errBox) errBox.classList.remove('show');
+    }
+
+    // ── AUTH LOGIC ──
+
+    // Listen for Google Auth Redirects Automatically
+    supabase.auth.onAuthStateChange(async (event, session) => {
+      if (event === 'SIGNED_IN' && session) {
+        const user = session.user;
+        const email = user.email;
+        let name = user.user_metadata?.full_name || email.split('@')[0];
+
+        try {
+          // Check if Google user already exists in custom affiliates table
+          const users = await sb(`affiliates?email=eq.${email}&select=*`);
+          let affiliateData;
+          
+          if (users.length > 0) {
+            // Already registered
+            affiliateData = { name: users[0].name, email: users[0].email, code: users[0].code };
+          } else {
+            // New User - Generate a unique code
+            let baseName = name.replace(/[^a-zA-Z0-9]/g, '').substring(0, 6).toUpperCase();
+            let randomStr = Math.random().toString(36).substring(2, 5).toUpperCase();
+            let newCode = `${baseName}${randomStr}`;
+            
+            const newUser = { name, email, password: 'google-oauth-user', code: newCode };
+            await sb('affiliates', 'POST', newUser);
+            
+            affiliateData = { name, email, code: newCode };
+          }
+          
+          localStorage.setItem('kasu_affiliate_user', JSON.stringify(affiliateData));
+          checkAuth();
+          
+          // Clean the URL
+          if (window.history.replaceState) {
+            window.history.replaceState(null, null, window.location.pathname);
+          }
+        } catch (e) {
+          showToast('⚠️ Could not sync account.');
+          console.error(e);
+        }
+      }
+    });
+
+    // Trigger Google Auth
+    async function handleGoogleLogin() {
+      // Show loading state instantly
+      showToast('🔄 Connecting to Google...');
+      
+      if (window.location.protocol === 'file:') {
+        showToast('⚠️ Google Auth blocked. Must run on a live website.');
+        return;
+      }
+      
+      // Force exact redirect URL back to the page
+      const redirectURL = window.location.origin + window.location.pathname;
+
+      const { data, error } = await supabase.auth.signInWithOAuth({
+        provider: 'google',
+        options: {
+          redirectTo: redirectURL 
+        }
+      });
+      
+      if (error) {
+        // This will print the EXACT reason it is failing to your screen!
+        console.error("Google Auth Error:", error.message);
+        showToast('⚠️ Error: ' + error.message);
+      }
+    }
+
+    function checkAuth() {
+      const userStr = localStorage.getItem('kasu_affiliate_user');
+      if (userStr) {
+        const user = JSON.parse(userStr);
+        document.getElementById('auth-section').style.display = 'none';
+        document.getElementById('dashboard-section').style.display = 'block';
+        
+        document.getElementById('dash-name').textContent = user.name.split(' ')[0]; // Show first name
+        document.getElementById('dash-code').textContent = user.code;
+        
+        // Build link dynamically
+        const baseUrl = window.location.origin + window.location.pathname.replace('affiliate.html', 'index.html');
+        document.getElementById('dash-link').textContent = `${baseUrl}?ref=${user.code}`;
+        
+        loadDashboardStats(user.code);
+      } else {
+        document.getElementById('auth-section').style.display = 'block';
+        document.getElementById('dashboard-section').style.display = 'none';
+      }
+    }
+
+    async function logout() {
+      localStorage.removeItem('kasu_affiliate_user');
+      await supabase.auth.signOut(); // Ensure Google session is wiped
+      checkAuth();
+      showToast('Logged out successfully.');
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
+
+    function copyLink() {
+      const link = document.getElementById('dash-link').textContent;
+      navigator.clipboard.writeText(link).then(() => showToast('✅ Link copied to clipboard!'));
+    }
+
+    // ── DASHBOARD & PAYOUT LOGIC ──
+
+    async function loadDashboardStats(userCode) {
+      try {
+        const orders = await sb(`orders?affiliate_code=eq.${userCode}&select=affiliate_commission`);
+        
+        let totalSales = orders.length;
+        let totalEarnings = 0;
+        
+        orders.forEach(order => {
+           totalEarnings += (Number(order.affiliate_commission) || 0);
+        });
+
+        document.getElementById('stat-sales').textContent = totalSales;
+        document.getElementById('stat-earnings').textContent = '₹' + totalEarnings;
+        
+      } catch (e) {
+        console.warn("Failed to load real-time stats", e);
+      }
+    }
+
+    function openPayoutModal() { document.getElementById('payout-overlay').classList.add('show'); }
+    function closePayoutModal() { document.getElementById('payout-overlay').classList.remove('show'); }
+
+    function togglePayFields() {
+      const method = document.getElementById('pay-method').value;
+      document.getElementById('fields-upi').style.display = method === 'upi' ? 'block' : 'none';
+      document.getElementById('fields-bank').style.display = method === 'bank' ? 'block' : 'none';
+    }
+
+    async function submitPayout() {
+      const method = document.getElementById('pay-method').value;
+      let isValid = true;
+      let detailsString = "";
+
+      if (method === 'upi') {
+        const upiVal = document.getElementById('pay-upi').value.trim();
+        const upiRegex = /^[a-zA-Z0-9.\-_]+@[a-zA-Z0-9]+$/;
+        if (!upiRegex.test(upiVal)) { throwErr('pay-upi', 'err-upi'); isValid = false; }
+        else detailsString = `UPI: ${upiVal}`;
+      } else {
+        const holder = document.getElementById('pay-holder').value.trim();
+        const acc = document.getElementById('pay-acc').value.trim();
+        const ifsc = document.getElementById('pay-ifsc').value.trim().toUpperCase();
+
+        if (holder.length < 3) { throwErr('pay-holder', 'err-holder'); isValid = false; }
+        if (!/^\d{9,18}$/.test(acc)) { throwErr('pay-acc', 'err-acc'); isValid = false; }
+        if (!/^[A-Z]{4}0[A-Z0-9]{6}$/.test(ifsc)) { throwErr('pay-ifsc', 'err-ifsc'); isValid = false; }
+        else detailsString = `BANK | Holder: ${holder} | A/c: ${acc} | IFSC: ${ifsc}`;
+      }
+
+      if (isValid) {
+        document.getElementById('btn-payout').disabled = true;
+        document.getElementById('load-payout').style.display = 'block';
+        
+        try {
+          const userStr = localStorage.getItem('kasu_affiliate_user');
+          if (!userStr) throw new Error("Not logged in");
+          const user = JSON.parse(userStr);
+          
+          await sb(`affiliates?email=eq.${user.email}`, 'PATCH', {
+            payout_method: method,
+            payout_details: detailsString
+          });
+
+          showToast('✅ Payout request submitted! We will process it shortly.');
+          
+          setTimeout(() => {
+            closePayoutModal();
+            document.getElementById('btn-payout').disabled = false;
+            document.getElementById('load-payout').style.display = 'none';
+          }, 1500);
+
+        } catch(e) {
+          showToast('⚠️ Could not submit request. Check connection.');
+          document.getElementById('btn-payout').disabled = false;
+          document.getElementById('load-payout').style.display = 'none';
+        }
+      }
+    }
+
+    // Run auth check on load
+    checkAuth();
+  </script></body>
+</html>

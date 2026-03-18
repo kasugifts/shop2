@@ -1,0 +1,361 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<!-- Meta Pixel Code -->
+<script>
+!function(f,b,e,v,n,t,s)
+{if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+n.queue=[];t=b.createElement(e);t.async=!0;
+t.src=v;s=b.getElementsByTagName(e)[0];
+s.parentNode.insertBefore(t,s)}(window, document,'script',
+'https://connect.facebook.net/en_US/fbevents.js');
+fbq('init', '669618839569441');
+fbq('track', 'PageView');
+</script>
+<noscript><img height="1" width="1" style="display:none"
+src="https://www.facebook.com/tr?id=669618839569441&ev=PageView&noscript=1"
+/></noscript>
+<!-- End Meta Pixel Code -->
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Return Policy — Kasu Gifts</title>
+<style>
+:root {
+  --cream: #f9efe3;
+  --peach: #f6c6ab;
+  --coral: #da6e59;
+  --green: #4a6741;
+  --dark: #2a2a2a;
+  --mid: #666;
+  --light: #fff8f3;
+  --white: #ffffff;
+  --shadow: 0 8px 30px rgba(218,110,89,0.08);
+  --radius: 14px;
+}
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; }
+body { font-family: 'Segoe UI', system-ui, sans-serif; background: var(--cream); color: var(--dark); min-height: 100vh; }
+
+@keyframes slideUpFade { 0%{opacity:0;transform:translateY(25px);} 100%{opacity:1;transform:translateY(0);} }
+@keyframes spin { to{transform:rotate(360deg);} }
+
+/* ── HEADER ── */
+header {
+  background: var(--white); height: 64px; padding: 0 5%;
+  display: flex; align-items: center; justify-content: space-between;
+  box-shadow: 0 2px 15px rgba(0,0,0,0.05); position: sticky; top: 0; z-index: 900;
+}
+.logo-wrap { display: flex; align-items: center; gap: 10px; cursor: pointer; text-decoration: none; }
+.logo-img-box {
+  width: 42px; height: 42px; border-radius: 10px; overflow: hidden;
+  background: linear-gradient(135deg, var(--coral), var(--peach));
+  display: flex; align-items: center; justify-content: center; font-size: 1.4rem;
+}
+.logo-img-box img { width: 100%; height: 100%; object-fit: cover; display: none; }
+.logo-name { font-size: 1.35rem; font-weight: 900; color: var(--coral); letter-spacing: -0.5px; }
+.hbtn {
+  display: flex; align-items: center; gap: 6px; padding: 9px 16px;
+  border: none; border-radius: 10px; font-size: 0.85rem; font-weight: 700;
+  cursor: pointer; transition: all 0.25s; background: var(--cream); color: var(--dark);
+  text-decoration: none; font-family: inherit;
+}
+.hbtn:hover { background: var(--peach); transform: translateY(-2px); }
+
+/* ── PAGE WRAP ── */
+.page-wrap {
+  max-width: 780px; margin: 0 auto; padding: 44px 20px 80px;
+  animation: slideUpFade 0.5s cubic-bezier(0.16,1,0.3,1) forwards;
+}
+
+/* ── HERO ── */
+.policy-hero {
+  background: linear-gradient(135deg, var(--coral) 0%, #e8956e 60%, var(--peach) 100%);
+  border-radius: 20px; padding: 40px 36px; color: white; margin-bottom: 36px;
+  position: relative; overflow: hidden;
+}
+.policy-hero::after {
+  content: '📋'; position: absolute; right: 36px; top: 50%;
+  transform: translateY(-50%); font-size: 4.5rem; opacity: 0.25; pointer-events: none;
+}
+.policy-hero h1 { font-size: clamp(1.6rem, 4vw, 2.2rem); font-weight: 900; margin-bottom: 6px; }
+.policy-hero p { font-size: 0.95rem; opacity: 0.9; max-width: 480px; line-height: 1.5; }
+
+/* ── SECTION CARD ── */
+.policy-card {
+  background: var(--white); border-radius: var(--radius); border: 1px solid #f0e8e0;
+  box-shadow: var(--shadow); overflow: hidden; margin-bottom: 18px;
+}
+.card-header {
+  display: flex; align-items: center; gap: 13px;
+  padding: 20px 24px; border-bottom: 1px solid #f0e8e0;
+  background: var(--light);
+}
+.card-icon { font-size: 1.5rem; flex-shrink: 0; }
+.card-title { font-size: 1.05rem; font-weight: 900; color: var(--dark); }
+.card-body { padding: 22px 24px; }
+
+/* ── HIGHLIGHT BOX ── */
+.highlight-box {
+  background: linear-gradient(135deg, var(--light), var(--peach));
+  border: 2px solid #f0d8c8; border-radius: var(--radius);
+  padding: 20px 22px; margin-bottom: 18px;
+  display: flex; align-items: flex-start; gap: 14px;
+}
+.hb-icon { font-size: 1.8rem; flex-shrink: 0; }
+.hb-title { font-size: 1rem; font-weight: 900; color: var(--coral); margin-bottom: 4px; }
+.hb-text { font-size: 0.9rem; color: var(--mid); line-height: 1.55; }
+
+/* ── LIST ITEMS ── */
+.policy-list { list-style: none; display: flex; flex-direction: column; gap: 11px; }
+.policy-list li {
+  display: flex; align-items: flex-start; gap: 11px;
+  font-size: 0.93rem; color: #444; line-height: 1.55;
+}
+.li-icon { font-size: 1.05rem; flex-shrink: 0; margin-top: 1px; }
+.li-text strong { color: var(--dark); font-weight: 800; }
+
+/* ── DIVIDER LIST ── */
+.divider-list { display: flex; flex-direction: column; }
+.dl-item {
+  display: flex; align-items: flex-start; gap: 14px;
+  padding: 14px 0; border-bottom: 1px solid #f0e8e0;
+}
+.dl-item:last-child { border-bottom: none; padding-bottom: 0; }
+.dl-emoji { font-size: 1.25rem; flex-shrink: 0; margin-top: 1px; }
+.dl-content {}
+.dl-title { font-weight: 800; font-size: 0.95rem; color: var(--dark); margin-bottom: 3px; }
+.dl-desc { font-size: 0.87rem; color: var(--mid); line-height: 1.55; }
+
+/* ── STEPS ── */
+.steps-list { display: flex; flex-direction: column; }
+.step-row { display: flex; gap: 16px; }
+.step-left { display: flex; flex-direction: column; align-items: center; flex-shrink: 0; }
+.step-num {
+  width: 30px; height: 30px; border-radius: 50%; background: var(--coral);
+  color: white; display: flex; align-items: center; justify-content: center;
+  font-size: 0.82rem; font-weight: 900; flex-shrink: 0;
+}
+.step-line { width: 2px; background: #f0e8e0; flex: 1; min-height: 24px; margin: 3px 0; }
+.step-right { padding-bottom: 22px; }
+.step-title { font-weight: 800; font-size: 0.93rem; color: var(--dark); margin-bottom: 3px; }
+.step-desc { font-size: 0.85rem; color: var(--mid); line-height: 1.5; }
+
+/* ── NOT ELIGIBLE TAG ── */
+.no-tag {
+  display: inline-flex; align-items: center; gap: 5px;
+  background: #fff0ee; border: 1px solid #f8c8c1; border-radius: 20px;
+  padding: 3px 11px; font-size: 0.75rem; font-weight: 800; color: var(--coral);
+}
+.yes-tag {
+  display: inline-flex; align-items: center; gap: 5px;
+  background: #e8f5e9; border: 1px solid #c8e6c9; border-radius: 20px;
+  padding: 3px 11px; font-size: 0.75rem; font-weight: 800; color: var(--green);
+}
+
+/* ── CONTACT CARD ── */
+.contact-card {
+  background: linear-gradient(135deg, var(--coral), #e8956e);
+  border-radius: var(--radius); padding: 28px 26px; color: white;
+  display: flex; align-items: center; justify-content: space-between;
+  flex-wrap: wrap; gap: 18px; margin-top: 8px;
+}
+.contact-card h3 { font-size: 1.1rem; font-weight: 900; margin-bottom: 5px; }
+.contact-card p { font-size: 0.88rem; opacity: 0.9; line-height: 1.5; }
+.contact-btn {
+  display: inline-flex; align-items: center; gap: 8px;
+  background: white; color: var(--coral); border: none; border-radius: 10px;
+  padding: 12px 22px; font-size: 0.9rem; font-weight: 900;
+  cursor: pointer; text-decoration: none; white-space: nowrap;
+  transition: all 0.2s; font-family: inherit; flex-shrink: 0;
+}
+.contact-btn:hover { transform: translateY(-2px); box-shadow: 0 6px 20px rgba(0,0,0,0.15); }
+
+/* ── FINE PRINT ── */
+.fine-print {
+  background: var(--light); border-radius: var(--radius);
+  padding: 18px 22px; border: 1px dashed #e0c8b8; margin-top: 8px;
+}
+.fine-print p { font-size: 0.82rem; color: var(--mid); line-height: 1.65; }
+.fine-print strong { color: var(--dark); }
+
+/* ── FOOTER ── */
+footer { background: var(--dark); color: #ccc; padding: 36px 5% 24px; text-align: center; }
+.ft-brand-name { font-size: 1.3rem; font-weight: 900; color: var(--peach); margin-bottom: 8px; }
+.footer-bottom { border-top: 1px solid #3a3a3a; padding-top: 18px; margin-top: 18px; font-size: 0.82rem; color: #555; }
+</style>
+</head>
+<body>
+
+<header>
+  <a class="logo-wrap" href="index.html">
+    <div class="logo-img-box">
+      <span id="logo-emoji">🎁</span>
+      <img id="logo-img" src="t51.png" alt="Kasu Gifts"
+        onload="this.style.display='block';document.getElementById('logo-emoji').style.display='none';"
+        onerror="this.style.display='none';">
+    </div>
+    <span class="logo-name">Kasu Gifts</span>
+  </a>
+  <a class="hbtn" href="index.html">← Back to Shop</a>
+</header>
+
+<div class="page-wrap">
+
+  <!-- Hero -->
+  <div class="policy-hero">
+    <h1>Return & Refund Policy</h1>
+    <p>We want every gift to be perfect. Here's everything you need to know about returns.</p>
+  </div>
+
+  <!-- 7-day window highlight -->
+  <div class="highlight-box">
+    <div class="hb-icon">📅</div>
+    <div>
+      <div class="hb-title">7-Day Return Window</div>
+      <div class="hb-text">Returns are accepted within <strong>7 days of delivery</strong>. After 7 days, we are unable to process any return or refund request regardless of the reason.</div>
+    </div>
+  </div>
+
+  <!-- Unboxing video — most important rule -->
+  <div class="policy-card">
+    <div class="card-header">
+      <span class="card-icon">🎥</span>
+      <span class="card-title">Unboxing Video — Mandatory</span>
+    </div>
+    <div class="card-body">
+      <div class="divider-list">
+        <div class="dl-item">
+          <span class="dl-emoji">▶️</span>
+          <div class="dl-content">
+            <div class="dl-title">Must be recorded before opening</div>
+            <div class="dl-desc">The video must begin before you touch or break any seal on the outer packaging. It must be one continuous, uninterrupted recording.</div>
+          </div>
+        </div>
+        <div class="dl-item">
+          <span class="dl-emoji">📦</span>
+          <div class="dl-content">
+            <div class="dl-title">Must show outer packaging clearly</div>
+            <div class="dl-desc">The outer shipping box, seal, and any labels must be clearly visible before unboxing begins.</div>
+          </div>
+        </div>
+        <div class="dl-item">
+          <span class="dl-emoji">🔍</span>
+          <div class="dl-content">
+            <div class="dl-title">Must show all contents</div>
+            <div class="dl-desc">Every item inside the package must be shown clearly in the video, including any damage or discrepancy.</div>
+          </div>
+        </div>
+        <div class="dl-item">
+          <span class="dl-emoji">🚫</span>
+          <div class="dl-content">
+            <div class="dl-title">No video = No return</div>
+            <div class="dl-desc">Returns <strong>will not be accepted under any circumstances</strong> without a valid unboxing video. No exceptions.</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- What's eligible -->
+  <div class="policy-card">
+    <div class="card-header">
+      <span class="card-icon">✅</span>
+      <span class="card-title">Eligible Reasons for Return</span>
+    </div>
+    <div class="card-body">
+      <ul class="policy-list">
+        <li><span class="li-icon">💔</span><div class="li-text"><strong>Damaged or defective product</strong> — item arrived broken, cracked, or not functioning</div></li>
+        <li><span class="li-icon">🔀</span><div class="li-text"><strong>Wrong item delivered</strong> — you received a different product than what you ordered</div></li>
+        <li><span class="li-icon">📭</span><div class="li-text"><strong>Missing item from gift set</strong> — one or more items listed in the product description were not included</div></li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- What's NOT eligible -->
+  <div class="policy-card">
+    <div class="card-header">
+      <span class="card-icon">❌</span>
+      <span class="card-title">Not Eligible for Return</span>
+    </div>
+    <div class="card-body">
+      <ul class="policy-list">
+        <li><span class="li-icon">🙅</span><div class="li-text"><strong>Change of mind</strong> — we do not accept returns because you changed your mind or ordered incorrectly</div></li>
+        <li><span class="li-icon">📂</span><div class="li-text"><strong>Used or opened items</strong> — products that have been used beyond the initial unboxing or tampered with</div></li>
+        <li><span class="li-icon">🕐</span><div class="li-text"><strong>Requests after 7 days</strong> — return requests raised more than 7 days after delivery</div></li>
+        <li><span class="li-icon">📵</span><div class="li-text"><strong>No unboxing video</strong> — any return without a valid unboxing video</div></li>
+        <li><span class="li-icon">🍫</span><div class="li-text"><strong>Perishable items</strong> — chocolates and other perishables, unless damaged or defective</div></li>
+        <li><span class="li-icon">🎨</span><div class="li-text"><strong>Personalised gifts</strong> — custom-made or personalised items cannot be returned</div></li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- How to raise a request -->
+  <div class="policy-card">
+    <div class="card-header">
+      <span class="card-icon">📲</span>
+      <span class="card-title">How to Raise a Return Request</span>
+    </div>
+    <div class="card-body">
+      <div class="steps-list">
+        <div class="step-row">
+          <div class="step-left"><div class="step-num">1</div><div class="step-line"></div></div>
+          <div class="step-right"><div class="step-title">Record your unboxing video</div><div class="step-desc">Make sure it's continuous and shows the full unboxing from sealed outer box to all contents.</div></div>
+        </div>
+        <div class="step-row">
+          <div class="step-left"><div class="step-num">2</div><div class="step-line"></div></div>
+          <div class="step-right"><div class="step-title">Contact us on Instagram within 7 days</div><div class="step-desc">DM us at <a href="https://www.instagram.com/kasugifts/" target="_blank" style="color:var(--coral);font-weight:800;">@KasuGifts</a> with your Order ID and the unboxing video.</div></div>
+        </div>
+        <div class="step-row">
+          <div class="step-left"><div class="step-num">3</div><div class="step-line"></div></div>
+          <div class="step-right"><div class="step-title">We review your request</div><div class="step-desc">Our team will review your video and order details and respond within 2 business days.</div></div>
+        </div>
+        <div class="step-row">
+          <div class="step-left"><div class="step-num">4</div></div>
+          <div class="step-right"><div class="step-title">Refund processed</div><div class="step-desc">Approved refunds are processed within 5–7 business days. COD orders receive refunds via bank transfer.</div></div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Refunds -->
+  <div class="policy-card">
+    <div class="card-header">
+      <span class="card-icon">💰</span>
+      <span class="card-title">Refunds</span>
+    </div>
+    <div class="card-body">
+      <ul class="policy-list">
+        <li><span class="li-icon">⏱️</span><div class="li-text">Approved refunds will be processed within <strong>5–7 business days</strong>.</div></li>
+        <li><span class="li-icon">💵</span><div class="li-text">For <strong>COD orders</strong>, refunds are issued via bank transfer — you will need to share your bank details with our team.</div></li>
+        <li><span class="li-icon">🚚</span><div class="li-text"><strong>Return shipping</strong> for eligible returns will be arranged and covered by Kasu Gifts.</div></li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- Contact -->
+  <div class="contact-card">
+    <div>
+      <h3>Need Help? Contact Us</h3>
+      <p>Reach out on Instagram within 7 days of delivery with your Order ID and unboxing video.</p>
+    </div>
+    <a class="contact-btn" href="https://www.instagram.com/kasugifts/" target="_blank">
+      📸 @KasuGifts
+    </a>
+  </div>
+
+  <!-- Fine print -->
+  <div class="fine-print" style="margin-top:18px;">
+    <p>Kasu Gifts reserves the right to reject any return request that does not meet the above conditions. This policy applies to all orders placed on <strong>kasugifts.vercel.app</strong> and is subject to change without prior notice. For the most up-to-date policy, please check this page before raising a request.</p>
+  </div>
+
+</div>
+
+<footer>
+  <div class="ft-brand-name">🎁 Kasu Gifts</div>
+  <div class="footer-bottom">© 2025 Kasu Gifts. All rights reserved. Made with ❤️ in India</div>
+</footer>
+
+</body>
+</html>

@@ -1,0 +1,1759 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+<meta name="google-site-verification" content="21LjD0_YeOp7zKxysr0MfqnbEzz2iqI84HVT2ShzjG4" />
+  <!-- Meta Pixel Code -->
+
+  <script>
+
+    !function (f, b, e, v, n, t, s) {
+      if (f.fbq) return; n = f.fbq = function () {
+        n.callMethod ?
+          n.callMethod.apply(n, arguments) : n.queue.push(arguments)
+      };
+      if (!f._fbq) f._fbq = n; n.push = n; n.loaded = !0; n.version = '2.0';
+      n.queue = []; t = b.createElement(e); t.async = !0;
+      t.src = v; s = b.getElementsByTagName(e)[0];
+      s.parentNode.insertBefore(t, s)
+    }(window, document, 'script',
+      'https://connect.facebook.net/en_US/fbevents.js');
+    fbq('init', '669618839569441');
+    fbq('track', 'PageView');
+  </script>
+  <noscript><img height="1" width="1" style="display:none"
+      src="https://www.facebook.com/tr?id=669618839569441&ev=PageView&noscript=1" /></noscript>
+  <!-- End Meta Pixel Code -->
+
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Kasu Gifts</title>
+<meta name="description" content="Shop handpicked gifts in India — keychains, necklaces, and more. Free delivery. COD available.">
+<meta name="keywords" content="gifts india, unique gifts, buy gifts online india, COD gifts">
+  <style>
+	.custom-upload-wrap { background: #fff8f3; border: 2px dashed #f0d8c8; padding: 18px; border-radius: var(--radius); margin-bottom: 20px; text-align: center; }
+.custom-upload-wrap h4 { font-size: 0.95rem; font-weight: 800; color: var(--coral); margin-bottom: 6px; }
+.custom-upload-wrap p { font-size: 0.8rem; color: var(--mid); margin-bottom: 14px; }
+.custom-img-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 8px; margin-top: 14px; }
+.custom-img-thumb { width: 100%; aspect-ratio: 1; border-radius: 8px; object-fit: cover; border: 2px solid var(--peach); }
+.upload-btn-styled { background: white; border: 1.5px solid var(--coral); color: var(--coral); padding: 10px 20px; border-radius: 10px; font-size: 0.9rem; font-weight: 800; cursor: pointer; transition: 0.2s; }
+.upload-btn-styled:hover { background: var(--coral); color: white; }
+    :root {
+      --cream: #f9efe3;
+      --peach: #f6c6ab;
+      --coral: #da6e59;
+      --green: #4a6741;
+      --dark: #2a2a2a;
+      --mid: #666;
+      --light: #fff8f3;
+      --white: #ffffff;
+      --shadow: 0 8px 30px rgba(218, 110, 89, 0.08);
+      --radius: 14px;
+    }
+
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body { font-family: 'Segoe UI', system-ui, sans-serif; background: var(--cream); color: var(--dark); min-height: 100vh; overflow-x: hidden; }
+
+    @keyframes slideUpFade { 0% { opacity: 0; transform: translateY(25px); } 100% { opacity: 1; transform: translateY(0); } }
+    @keyframes popIn { 0% { opacity: 0; transform: scale(0.95); } 100% { opacity: 1; transform: scale(1); } }
+    @keyframes spin { to { transform: rotate(360deg); } }
+    @keyframes revSlideIn { from { opacity: 0; transform: translateY(12px); } to { opacity: 1; transform: translateY(0); } }
+    @keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
+
+    header { background: var(--white); height: 64px; padding: 0 5%; display: flex; align-items: center; justify-content: space-between; box-shadow: 0 2px 15px rgba(0,0,0,0.05); position: sticky; top: 0; z-index: 900; }
+    .logo-wrap { display: flex; align-items: center; gap: 10px; cursor: pointer; text-decoration: none; }
+    .logo-img-box { width: 42px; height: 42px; border-radius: 10px; overflow: hidden; background: linear-gradient(135deg, var(--coral), var(--peach)); display: flex; align-items: center; justify-content: center; font-size: 1.4rem; }
+    .logo-img-box img { width: 100%; height: 100%; object-fit: cover; display: none; }
+    .logo-name { font-size: 1.35rem; font-weight: 900; color: var(--coral); letter-spacing: -0.5px; }
+    .header-right { display: flex; align-items: center; gap: 8px; }
+    .hbtn { display: flex; align-items: center; gap: 6px; padding: 9px 16px; border: none; border-radius: 10px; font-size: 0.85rem; font-weight: 700; cursor: pointer; transition: all 0.25s; background: var(--cream); color: var(--dark); text-decoration: none; font-family: inherit; }
+    .hbtn:hover { background: var(--peach); transform: translateY(-2px); }
+    .hbtn.primary { background: var(--coral); color: white; }
+    .hbtn.primary:hover { background: #c45f4a; }
+    .cart-badge { background: white; color: var(--coral); border-radius: 50%; width: 20px; height: 20px; display: flex; align-items: center; justify-content: center; font-size: 0.72rem; font-weight: 900; }
+    @media(max-width:600px) { .header-right .hbtn span { display: none; } .hbtn { padding: 9px 12px; } }
+
+    .page { display: none; }
+    .page.active { display: block; animation: slideUpFade 0.5s cubic-bezier(0.16,1,0.3,1) forwards; }
+
+    .home-wrap { max-width: 1140px; margin: 0 auto; padding: 36px 20px; }
+    .section-title { font-size: 1.3rem; font-weight: 800; margin-bottom: 20px; display: flex; align-items: center; gap: 10px; }
+    .section-title::after { content: ''; flex: 1; height: 2px; background: var(--peach); border-radius: 2px; }
+    .products-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(250px, 1fr)); gap: 24px; }
+    .product-card { background: var(--white); border-radius: var(--radius); box-shadow: var(--shadow); overflow: hidden; cursor: pointer; border: 1px solid #f0e8e0; transition: transform 0.3s, box-shadow 0.3s; }
+    .product-card:hover { transform: translateY(-6px); box-shadow: 0 15px 35px rgba(218,110,89,0.15); }
+    .pc-img { width: 100%; aspect-ratio: 1; object-fit: cover; display: block; }
+    .pc-emoji-placeholder { width: 100%; aspect-ratio: 1; display: flex; align-items: center; justify-content: center; font-size: 5rem; background: linear-gradient(135deg, var(--peach), var(--cream)); }
+    .pc-body { padding: 18px; }
+    .pc-tag { font-size: 0.7rem; font-weight: 800; color: var(--green); text-transform: uppercase; letter-spacing: 1px; margin-bottom: 5px; }
+    .pc-name { font-size: 1.05rem; font-weight: 800; margin-bottom: 8px; line-height: 1.3; }
+    .pc-stars { font-size: 0.85rem; color: #f7b731; margin-bottom: 12px; }
+    .pc-price-row { display: flex; align-items: center; gap: 8px; flex-wrap: wrap; }
+    .pc-price { font-size: 1.4rem; font-weight: 900; color: var(--coral); }
+    .pc-old { font-size: 0.85rem; text-decoration: line-through; color: #bbb; }
+    .pc-disc { margin-left: auto; background: var(--coral); color: white; font-size: 0.7rem; font-weight: 800; padding: 4px 10px; border-radius: 20px; }
+
+    /* ── VARIANTS ── */
+    .variant-selector { margin-bottom: 24px; }
+    .variant-label { font-size: 0.78rem; font-weight: 800; color: var(--mid); text-transform: uppercase; letter-spacing: 0.6px; margin-bottom: 10px; display: block; }
+    .variant-label span { color: var(--dark); font-size: 0.9rem; text-transform: none; letter-spacing: 0; }
+    .variant-options { display: flex; flex-wrap: wrap; gap: 10px; }
+    .variant-btn { padding: 9px 18px; border: 2px solid #f0e8e0; border-radius: 10px; background: var(--white); font-size: 0.9rem; font-weight: 700; cursor: pointer; transition: all 0.2s; font-family: inherit; color: var(--dark); display: flex; flex-direction: column; align-items: center; gap: 2px; }
+    .variant-btn:hover { border-color: var(--coral); background: var(--light); }
+    .variant-btn.active { border-color: var(--coral); background: linear-gradient(135deg, var(--light), #fde8e0); color: var(--coral); }
+    .variant-btn .vb-price { font-size: 0.75rem; font-weight: 800; color: var(--green); }
+    .variant-btn.active .vb-price { color: var(--coral); }
+
+    .detail-wrap { max-width: 1140px; margin: 0 auto; padding: 28px 20px; }
+    .back-btn { display: inline-flex; align-items: center; gap: 6px; background: none; border: none; color: var(--coral); font-weight: 800; cursor: pointer; font-size: 0.9rem; margin-bottom: 24px; padding: 0; transition: transform 0.2s; font-family: inherit; }
+    .back-btn:hover { transform: translateX(-4px); }
+    .detail-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 48px; align-items: start; }
+    @media(max-width:700px) { .detail-grid { grid-template-columns: 1fr; } }
+
+    .gallery-container { position: relative; width: 100%; aspect-ratio: 1; border-radius: var(--radius); overflow: hidden; margin-bottom: 12px; background: linear-gradient(135deg, var(--peach), var(--cream)); animation: popIn 0.5s; }
+    .gallery-carousel { display: flex; overflow-x: auto; scroll-snap-type: x mandatory; scrollbar-width: none; width: 100%; height: 100%; scroll-behavior: smooth; -webkit-overflow-scrolling: touch; }
+    .gallery-carousel::-webkit-scrollbar { display: none; }
+    .gallery-slide { flex: 0 0 100%; width: 100%; height: 100%; object-fit: cover; scroll-snap-align: start; display: flex; align-items: center; justify-content: center; font-size: 7rem; }
+    .gallery-disc-badge { position: absolute; top: 14px; left: 14px; background: var(--coral); color: white; padding: 5px 14px; border-radius: 20px; font-size: 0.82rem; font-weight: 800; z-index: 10; }
+    .thumb-row { display: flex; gap: 12px; overflow-x: auto; padding-bottom: 12px; scrollbar-width: none; }
+    .thumb-row::-webkit-scrollbar { display: none; }
+    .thumb-item { flex: 0 0 76px; width: 76px; height: 76px; border-radius: 9px; overflow: hidden; cursor: pointer; border: 2.5px solid transparent; background: var(--peach); display: flex; align-items: center; justify-content: center; font-size: 1.6rem; transition: all 0.2s; }
+    .thumb-item.active { border-color: var(--coral); transform: translateY(-2px); }
+    .thumb-item img { width: 100%; height: 100%; object-fit: cover; }
+    
+    /* ── SEPARATED GPT-STYLE BADGES ── */
+    .feature-badges-wrap { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 18px; }
+    .feat-badge {
+      background: #202123; /* Dark sleek ChatGPT color */
+      color: #ececf1;
+      padding: 8px 16px;
+      border-radius: 30px; /* Pill shape */
+      font-size: 0.8rem;
+      font-weight: 700;
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      border: 1px solid #343541;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.08);
+      transition: transform 0.2s;
+    }
+    .feat-badge:hover { transform: translateY(-2px); border-color: #555; }
+    .feat-badge .ico { color: #ffffff; font-weight: 900; font-size: 0.9rem; }
+
+    .det-tag { font-size: 0.75rem; font-weight: 800; color: var(--green); text-transform: uppercase; letter-spacing: 1px; margin-bottom: 7px; }
+    .det-title { font-size: clamp(1.5rem, 3vw, 2.2rem); font-weight: 900; line-height: 1.2; margin-bottom: 12px; }
+    .det-stars { display: flex; align-items: center; gap: 8px; font-size: 0.9rem; color: var(--mid); margin-bottom: 24px; flex-wrap: wrap; }
+    .price-card { background: linear-gradient(135deg, var(--light), var(--peach)); border-radius: var(--radius); padding: 22px; margin-bottom: 20px; border: 1.5px solid #f0d8c8; }
+    .price-main { font-size: 3.2rem; font-weight: 900; color: var(--coral); line-height: 1; margin-bottom: 6px; }
+    .price-sub { display: flex; align-items: center; gap: 10px; flex-wrap: wrap; }
+    .price-old { text-decoration: line-through; color: #bbb; font-size: 1.05rem; }
+    .disc-pill { background: var(--coral); color: white; padding: 4px 12px; border-radius: 20px; font-size: 0.8rem; font-weight: 800; }
+    .save-line { color: var(--green); font-weight: 800; font-size: 0.95rem; margin-top: 10px; }
+    .tax-line { color: var(--mid); font-size: 0.8rem; margin-top: 4px; }
+
+    .timer-card { background: white; border: 2px dashed var(--coral); border-radius: var(--radius); padding: 16px; margin-bottom: 24px; text-align: center; }
+    .timer-lbl { font-size: 0.75rem; font-weight: 800; text-transform: uppercase; letter-spacing: 1px; color: var(--mid); margin-bottom: 10px; }
+    .timer-blocks { display: flex; justify-content: center; align-items: center; gap: 8px; }
+    .tblock { background: var(--coral); color: white; border-radius: 9px; padding: 10px 14px; min-width: 58px; text-align: center; }
+    .tnum { font-size: 1.6rem; font-weight: 900; line-height: 1; }
+    .tlbl { font-size: 0.6rem; font-weight: 700; letter-spacing: 1.2px; margin-top: 3px; text-transform: uppercase; }
+    .tsep { font-size: 1.6rem; font-weight: 900; color: var(--coral); }
+
+    .btn-primary { width: 100%; padding: 18px; background: var(--coral); color: white; border: none; border-radius: var(--radius); font-size: 1.1rem; font-weight: 900; cursor: pointer; transition: all 0.2s; margin-bottom: 12px; box-shadow: 0 4px 15px rgba(218,110,89,0.3); font-family: inherit; }
+    .btn-primary:hover { background: #c45f4a; transform: translateY(-2px); }
+    .btn-primary:disabled { opacity: 0.7; cursor: not-allowed; transform: none; }
+    .btn-secondary { width: 100%; padding: 16px; background: var(--cream); color: var(--dark); border: 2px solid var(--peach); border-radius: var(--radius); font-size: 1rem; font-weight: 800; cursor: pointer; transition: all 0.2s; font-family: inherit; }
+    .btn-secondary:hover { background: var(--peach); }
+
+    .product-content-stack { margin-top: 50px; padding-top: 30px; border-top: 2px solid #f0e8e0; }
+    .section-heading { font-size: 1.4rem; font-weight: 900; color: var(--dark); margin-bottom: 20px; }
+    .desc-box { background: white; padding: 32px; border-radius: var(--radius); border: 1px solid #f0e8e0; }
+    .desc-text { font-size: 1rem; line-height: 1.8; color: #555; margin-bottom: 24px; }
+    .desc-feature-list { display: flex; flex-direction: column; }
+    .desc-feature-item { display: flex; align-items: flex-start; gap: 14px; padding: 18px 0; border-bottom: 1px solid #f0e8e0; }
+    .desc-feature-item:last-child { border-bottom: none; padding-bottom: 0; }
+    .df-emoji { font-size: 1.35rem; flex-shrink: 0; margin-top: -2px; }
+    .df-text { font-size: 0.98rem; color: #555; line-height: 1.5; }
+    .df-text strong { color: #222; font-weight: 800; }
+
+    /* ── REVIEWS & IMAGE GALLERY CSS ── */
+    .reviews-section { margin-top: 40px; }
+    .rev-summary-bar { background: white; border-radius: var(--radius); padding: 24px; border: 1px solid #f0e8e0; margin-bottom: 24px; display: flex; align-items: center; gap: 32px; flex-wrap: wrap; }
+    .rev-big-score { text-align: center; }
+    .rev-big-num { font-size: 4rem; font-weight: 900; color: var(--coral); line-height: 1; }
+    .rev-big-stars { color: #f7b731; font-size: 1.3rem; margin: 6px 0 4px; }
+    .rev-big-count { font-size: 0.82rem; color: var(--mid); }
+    .rev-bars { flex: 1; min-width: 180px; }
+    .rev-bar-row { display: flex; align-items: center; gap: 10px; margin-bottom: 6px; font-size: 0.82rem; color: var(--mid); }
+    .rev-bar-track { flex: 1; height: 8px; background: #f0e8e0; border-radius: 10px; overflow: hidden; }
+    .rev-bar-fill { height: 100%; background: linear-gradient(90deg, #f7b731, #f9a825); border-radius: 10px; transition: width 0.8s ease; }
+    
+    .rev-gallery-wrap { margin-bottom: 28px; }
+    .rev-gallery-title { font-size: 0.9rem; font-weight: 800; color: var(--mid); margin-bottom: 12px; text-transform: uppercase; letter-spacing: 0.5px; }
+    .rev-gallery { display: flex; gap: 12px; overflow-x: auto; padding-bottom: 12px; scrollbar-width: none; }
+    .rev-gallery::-webkit-scrollbar { display: none; }
+    .rg-img { width: 90px; height: 90px; border-radius: 12px; object-fit: cover; cursor: pointer; border: 2.5px solid transparent; flex-shrink: 0; transition: transform 0.2s, border-color 0.2s; background: var(--peach); }
+    .rg-img:hover { border-color: var(--coral); transform: translateY(-4px); }
+
+    .rev-list { margin-bottom: 28px; }
+    .rev-card { background: white; border-radius: var(--radius); padding: 22px; margin-bottom: 14px; border: 1px solid #f0e8e0; animation: revSlideIn 0.4s ease both; }
+    .rev-top { display: flex; justify-content: space-between; align-items: center; margin-bottom: 6px; }
+    .rev-name { font-weight: 800; font-size: 1rem; color: var(--dark); }
+    .rev-stars { color: #f7b731; font-size: 1.05rem; }
+    .rev-date { font-size: 0.78rem; color: #aaa; margin-bottom: 10px; }
+    .rev-text { font-size: 0.96rem; color: #444; line-height: 1.65; }
+    .rev-card-img { width: 100%; max-width: 140px; height: 140px; border-radius: 10px; margin-top: 14px; object-fit: cover; cursor: pointer; border: 1px solid #f0e8e0; display: block; }
+    .rev-verified { display: inline-flex; align-items: center; gap: 4px; background: #e8f5e9; color: var(--green); font-size: 0.73rem; font-weight: 800; padding: 4px 10px; border-radius: 20px; margin-bottom: 12px; }
+
+    .write-review-box { background: white; border-radius: var(--radius); padding: 28px; border: 1.5px solid var(--peach); }
+    .write-review-box h4 { font-size: 1.1rem; font-weight: 900; margin-bottom: 20px; }
+    .star-picker { display: flex; gap: 8px; margin-bottom: 4px; }
+    .star-btn { font-size: 1.8rem; cursor: pointer; background: none; border: none; color: #ddd; transition: all 0.15s; line-height: 1; }
+    .star-btn.lit { color: #f7b731; }
+    .star-label { font-size: 0.82rem; color: var(--mid); margin-top: 4px; margin-bottom: 14px; min-height: 18px; }
+    
+    .file-upload-box { border: 2px dashed #f0d8c8; border-radius: 10px; padding: 18px; text-align: center; cursor: pointer; background: var(--light); transition: all 0.2s; margin-bottom: 16px; position: relative; }
+    .file-upload-box:hover { border-color: var(--coral); background: white; }
+    .file-upload-box input { position: absolute; inset: 0; width: 100%; height: 100%; opacity: 0; cursor: pointer; }
+    .file-upload-lbl { font-size: 0.9rem; color: var(--coral); font-weight: 800; cursor: pointer; display: flex; flex-direction: column; align-items: center; gap: 4px; }
+    .file-upload-lbl span { font-size: 1.6rem; }
+    .file-preview-wrap { display: none; margin-top: 12px; position: relative; width: max-content; margin-left: auto; margin-right: auto; }
+    .file-preview-img { width: 70px; height: 70px; border-radius: 8px; object-fit: cover; border: 2px solid var(--peach); }
+    .file-remove-btn { position: absolute; top: -8px; right: -8px; background: white; border: 1px solid #ddd; border-radius: 50%; width: 22px; height: 22px; font-size: 0.7rem; display: flex; align-items: center; justify-content: center; cursor: pointer; color: var(--mid); box-shadow: 0 2px 5px rgba(0,0,0,0.1); }
+
+    .rev-submit-btn { width: 100%; padding: 16px; background: var(--coral); color: white; border: none; border-radius: var(--radius); font-size: 1rem; font-weight: 900; cursor: pointer; transition: all 0.22s; font-family: inherit; }
+    .rev-submit-btn:hover:not(:disabled) { background: #c45f4a; transform: translateY(-2px); }
+    .rev-submit-btn:disabled { opacity: 0.65; cursor: not-allowed; }
+
+    /* IMAGE MODAL OVERLAY */
+    .img-modal { position: fixed; inset: 0; background: rgba(0,0,0,0.85); z-index: 2000; display: none; align-items: center; justify-content: center; backdrop-filter: blur(5px); }
+    .img-modal.show { display: flex; animation: fadeIn 0.3s; }
+    .img-modal img { max-width: 90%; max-height: 85vh; border-radius: 12px; box-shadow: 0 10px 40px rgba(0,0,0,0.5); object-fit: contain; }
+    .img-modal-close { position: absolute; top: 24px; right: 24px; background: rgba(255,255,255,0.2); color: white; width: 44px; height: 44px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 1.2rem; border: none; cursor: pointer; transition: 0.2s; z-index: 2010; }
+    .img-modal-close:hover { background: var(--coral); }
+
+    /* ... [Rest of your UI Panels styling] ... */
+    .overlay { position: fixed; inset: 0; background: rgba(0,0,0,0.5); z-index: 1000; display: none; backdrop-filter: blur(3px); }
+    .overlay.show { display: block; animation: fadeIn 0.3s; }
+    .panel { position: fixed; top: 0; right: -110%; width: min(480px, 100%); height: 100%; background: white; z-index: 1100; transition: right 0.4s cubic-bezier(0.16,1,0.3,1); display: flex; flex-direction: column; overflow: hidden; }
+    .panel.open { right: 0; box-shadow: -10px 0 30px rgba(0,0,0,0.1); }
+    .panel-hdr { padding: 24px; border-bottom: 1px solid #f0e8e0; display: flex; align-items: center; justify-content: space-between; flex-shrink: 0; background: var(--light); }
+    .panel-hdr h2 { font-size: 1.2rem; font-weight: 900; }
+    .close-btn { width: 38px; height: 38px; border: none; background: var(--peach); border-radius: 50%; cursor: pointer; font-size: 1.1rem; display: flex; align-items: center; justify-content: center; transition: all 0.2s; }
+    .close-btn:hover { background: var(--coral); color: white; transform: rotate(90deg); }
+    .panel-body { flex: 1; overflow-y: auto; padding: 24px; }
+    .panel-foot { padding: 24px; border-top: 1px solid #f0e8e0; flex-shrink: 0; background: var(--light); }
+
+    .cart-item { display: flex; gap: 14px; padding: 16px 0; border-bottom: 1px solid #f4ece4; align-items: center; }
+    .ci-img { width: 64px; height: 64px; border-radius: 10px; overflow: hidden; background: var(--peach); flex-shrink: 0; display: flex; align-items: center; justify-content: center; font-size: 1.8rem; }
+    .ci-img img { width: 100%; height: 100%; object-fit: cover; }
+    .ci-info { flex: 1; min-width: 0; }
+    .ci-name { font-weight: 800; font-size: 0.92rem; margin-bottom: 4px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+    .ci-variant { font-size: 0.78rem; color: var(--mid); font-weight: 700; margin-bottom: 4px; } 
+    .ci-price { color: var(--coral); font-weight: 900; font-size: 1rem; }
+    .ci-qty-ctrl { display: flex; align-items: center; border: 2px solid #f0e8e0; border-radius: 10px; overflow: hidden; flex-shrink: 0; }
+    .qty-btn { width: 36px; height: 36px; border: none; background: var(--light); font-size: 1.2rem; font-weight: 900; cursor: pointer; color: var(--dark); display: flex; align-items: center; justify-content: center; transition: all 0.15s; font-family: inherit; }
+    .qty-btn:hover { background: var(--peach); }
+    .qty-btn.minus:hover { background: #fee; color: #e74c3c; }
+    .qty-num { min-width: 32px; text-align: center; font-weight: 900; font-size: 0.95rem; border-left: 1.5px solid #f0e8e0; border-right: 1.5px solid #f0e8e0; line-height: 36px; }
+    .cart-empty { text-align: center; padding: 80px 20px; }
+    .cart-empty .ce-ico { font-size: 4rem; margin-bottom: 16px; }
+    .cart-total-row { display: flex; justify-content: space-between; align-items: center; padding: 18px; background: var(--white); border: 2px solid var(--peach); border-radius: var(--radius); margin-bottom: 16px; }
+    .ct-lbl { font-size: 0.95rem; font-weight: 800; }
+    .ct-amt { font-size: 1.6rem; font-weight: 900; color: var(--coral); }
+
+    .chk-steps { display: flex; margin-bottom: 24px; }
+    .chk-step { flex: 1; text-align: center; padding: 10px 4px; font-size: 0.7rem; font-weight: 800; color: #ccc; border-bottom: 3px solid #eee; text-transform: uppercase; }
+    .chk-step.active { color: var(--coral); border-bottom-color: var(--coral); }
+    .chk-step.done { color: var(--green); border-bottom-color: var(--green); }
+
+    .form-group { margin-bottom: 16px; }
+    .form-group label { display: block; font-size: 0.78rem; font-weight: 800; color: var(--mid); margin-bottom: 6px; text-transform: uppercase; letter-spacing: 0.6px; }
+    .form-group input[type="text"], .form-group input[type="tel"], .form-group select, .form-group textarea { width: 100%; padding: 14px 16px; border: 2px solid #f0e8e0; border-radius: 10px; font-size: 1rem; font-family: inherit; background: var(--light); transition: border-color 0.2s; color: var(--dark); }
+    .form-group input:focus, .form-group select:focus, .form-group textarea:focus { outline: none; border-color: var(--coral); background: white; }
+    .form-group input.err { border-color: #e74c3c !important; }
+    .err-msg { font-size: 0.75rem; color: #e74c3c; margin-top: 5px; display: none; }
+    .err-msg.show { display: block; }
+    .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; }
+    @media(max-width:480px) { .form-row { grid-template-columns: 1fr; } }
+
+    /* ── COUPONS CSS ── */
+    .coupon-section { background: white; border: 1.5px dashed var(--peach); border-radius: var(--radius); padding: 18px; margin-bottom: 20px; }
+    .coupon-input-row { display: flex; gap: 8px; margin-bottom: 12px; }
+    .coupon-input-row input { flex: 1; padding: 12px 14px; border: 2px solid #f0e8e0; border-radius: 10px; font-size: 0.95rem; font-family: inherit; color: var(--dark); text-transform: uppercase; transition: border-color 0.2s; background: var(--light); }
+    .coupon-input-row input:focus { border-color: var(--coral); outline: none; background: white; }
+    .coupon-btn { background: var(--dark); color: white; border: none; padding: 0 20px; border-radius: 10px; font-weight: 800; cursor: pointer; transition: background 0.2s; white-space: nowrap; font-family: inherit; }
+    .coupon-btn:hover:not(:disabled) { background: #000; }
+    .coupon-btn:disabled { opacity: 0.5; cursor: not-allowed; }
+    .suggested-tags { display: flex; gap: 10px; overflow-x: auto; padding-bottom: 4px; scrollbar-width: none; }
+    .suggested-tags::-webkit-scrollbar { display: none; }
+    .coup-tag { background: linear-gradient(135deg, var(--light), var(--peach)); border: 1.5px solid #f0d8c8; padding: 8px 14px; border-radius: 10px; font-size: 0.8rem; cursor: pointer; white-space: nowrap; transition: all 0.2s; display: flex; align-items: center; gap: 6px; }
+    .coup-tag:hover { border-color: var(--coral); transform: translateY(-2px); }
+    .coup-tag strong { color: var(--coral); font-weight: 900; }
+
+    .pay-option { background: white; border: 2.5px solid #f0e8e0; border-radius: var(--radius); padding: 18px; display: flex; align-items: center; gap: 14px; margin-bottom: 14px; cursor: pointer; transition: all 0.2s; position: relative; }
+    .pay-option:hover { border-color: var(--coral); background: var(--light); }
+    .pay-option.selected { border-color: var(--green); background: #f0f9f0; }
+    .pay-ico { font-size: 2rem; flex-shrink: 0; }
+    .pay-info { flex: 1; }
+    .pay-title { font-weight: 800; font-size: 1rem; }
+    .pay-desc { font-size: 0.83rem; color: var(--mid); margin-top: 3px; line-height: 1.4; }
+    .pay-badge { font-size: 0.7rem; font-weight: 800; padding: 3px 9px; border-radius: 20px; white-space: nowrap; }
+    .pay-badge-cod { background: #fff3e0; color: #e65100; }
+    .pay-badge-upi { background: #e8f5e9; color: var(--green); }
+    .pay-check { width: 22px; height: 22px; border-radius: 50%; border: 2.5px solid #ddd; flex-shrink: 0; display: flex; align-items: center; justify-content: center; font-size: 0.8rem; transition: all 0.2s; }
+    .pay-option.selected .pay-check { background: var(--green); border-color: var(--green); color: white; }
+
+    .order-summary { background: var(--light); border-radius: var(--radius); padding: 20px; margin-bottom: 20px; border: 1px solid #f0e8e0; }
+    .os-row { display: flex; justify-content: space-between; font-size: 0.95rem; padding: 6px 0; }
+    .os-total { display: flex; justify-content: space-between; font-weight: 900; font-size: 1.15rem; padding-top: 12px; margin-top: 12px; border-top: 1px solid #e0d8d0; }
+
+    .success-wrap { text-align: center; padding: 30px 0; animation: popIn 0.5s; }
+    .success-ico { font-size: 4.5rem; margin-bottom: 16px; }
+    .success-title { font-size: 1.6rem; font-weight: 900; margin-bottom: 10px; }
+    .success-sub { color: var(--mid); font-size: 0.95rem; margin-bottom: 24px; line-height: 1.6; }
+    .order-id-box { background: var(--light); border: 2px dashed var(--coral); border-radius: var(--radius); padding: 18px; margin-bottom: 20px; }
+    .oid-lbl { font-size: 0.8rem; color: var(--mid); margin-bottom: 4px; font-weight: 700; text-transform: uppercase; }
+    .oid-val { font-size: 1.25rem; font-weight: 900; color: var(--coral); }
+    .addr-box { background: #f0f9f0; border-radius: 12px; padding: 18px; margin-bottom: 18px; text-align: left; border: 1px solid #d0ebd0; }
+    .addr-name { font-weight: 900; font-size: 1rem; margin-bottom: 4px; }
+    .addr-detail { font-size: 0.9rem; color: var(--dark); line-height: 1.5; }
+    .cod-box { background: var(--light); border-radius: 12px; padding: 18px; margin-bottom: 24px; display: flex; justify-content: space-between; align-items: center; border: 1px solid #f0e8e0; }
+    .cod-lbl { font-size: 0.9rem; color: var(--mid); font-weight: 700; }
+    .cod-amt { font-size: 1.3rem; font-weight: 900; color: var(--coral); }
+
+    .order-track-card { background: white; border-radius: var(--radius); padding: 20px; margin-bottom: 16px; border: 1px solid #f0e8e0; box-shadow: var(--shadow); }
+    .otc-top { display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 20px; padding-bottom: 16px; border-bottom: 1px solid #f0e8e0; }
+    .otc-id-lbl { font-size: 0.72rem; color: var(--mid); }
+    .otc-id { font-weight: 900; color: var(--coral); font-size: 0.95rem; margin-bottom: 2px; }
+    .otc-date { font-size: 0.75rem; color: #bbb; }
+    .otc-amt { font-weight: 900; font-size: 1.1rem; }
+    .otc-method { font-size: 0.75rem; color: var(--green); margin-top: 2px; }
+    .track-steps { display: flex; flex-direction: column; }
+    .ts-row { display: flex; gap: 14px; }
+    .ts-left { display: flex; flex-direction: column; align-items: center; flex-shrink: 0; }
+    .ts-dot { width: 28px; height: 28px; border-radius: 50%; background: #eee; display: flex; align-items: center; justify-content: center; font-size: 0.85rem; font-weight: 700; color: #aaa; flex-shrink: 0; transition: all 0.3s; }
+    .ts-dot.done { background: var(--green); color: white; }
+    .ts-dot.active { background: var(--coral); color: white; }
+    .ts-line { width: 2px; background: #eee; flex: 1; min-height: 28px; margin: 2px 0; }
+    .ts-line.done { background: var(--green); }
+    .ts-right { padding-bottom: 24px; }
+    .ts-title { font-weight: 800; font-size: 0.88rem; }
+
+    .no-data { text-align: center; padding: 48px 20px; color: var(--mid); }
+    .no-data-ico { font-size: 3rem; margin-bottom: 12px; }
+    .track-search-card { background: linear-gradient(135deg, var(--light), var(--peach)); border: 1.5px solid #f0d8c8; border-radius: var(--radius); padding: 20px; margin-bottom: 24px; }
+    .track-search-card h3 { font-size: 1rem; font-weight: 900; margin-bottom: 4px; }
+    .track-search-card p { font-size: 0.8rem; color: var(--mid); margin-bottom: 14px; }
+    .track-search-row { display: flex; gap: 10px; }
+    .track-search-row input { flex: 1; padding: 13px 16px; border: 2px solid #f0d8c8; border-radius: 10px; font-size: 0.95rem; font-family: inherit; background: white; color: var(--dark); transition: border-color 0.2s; }
+    .track-search-row input:focus { outline: none; border-color: var(--coral); }
+    .track-search-row input::placeholder { color: #bbb; }
+    .track-search-btn { padding: 13px 20px; background: var(--coral); color: white; border: none; border-radius: 10px; font-size: 0.9rem; font-weight: 800; cursor: pointer; font-family: inherit; transition: all 0.2s; white-space: nowrap; }
+    .track-search-btn:hover { background: #c45f4a; transform: translateY(-2px); }
+    .track-search-btn:disabled { opacity: 0.7; cursor: not-allowed; transform: none; }
+    .track-divider { display: flex; align-items: center; gap: 12px; margin-bottom: 20px; }
+    .track-divider span { font-size: 0.75rem; font-weight: 800; text-transform: uppercase; letter-spacing: 1px; color: var(--mid); white-space: nowrap; }
+    .track-divider::before, .track-divider::after { content: ''; flex: 1; height: 1px; background: #e8ddd4; }
+    .track-not-found { background: white; border: 1.5px dashed #f0d8c8; border-radius: var(--radius); padding: 28px; text-align: center; margin-bottom: 16px; }
+    .track-not-found .tnf-ico { font-size: 2.5rem; margin-bottom: 10px; }
+    .track-not-found p { font-size: 0.9rem; color: var(--mid); line-height: 1.6; }
+    .track-not-found strong { color: var(--coral); }
+    .track-found-badge { display: inline-flex; align-items: center; gap: 6px; background: #e8f5e9; color: var(--green); font-size: 0.8rem; font-weight: 800; padding: 6px 14px; border-radius: 20px; margin-bottom: 14px; }
+
+    .loader { border: 3px solid #f0e8e0; border-top: 3px solid var(--coral); border-radius: 50%; width: 36px; height: 36px; animation: spin 0.8s linear infinite; margin: 40px auto; }
+    .load-txt { text-align: center; color: var(--mid); padding: 40px; font-size: 0.95rem; }
+
+    .toast { position: fixed; bottom: 24px; left: 50%; transform: translateX(-50%) translateY(100px); background: var(--dark); color: white; padding: 14px 28px; border-radius: 50px; font-size: 0.95rem; font-weight: 800; z-index: 9999; transition: transform 0.4s cubic-bezier(0.16,1,0.3,1); white-space: nowrap; pointer-events: none; box-shadow: 0 8px 25px rgba(0,0,0,0.3); }
+    .toast.show { transform: translateX(-50%) translateY(0); }
+
+    footer { background: var(--dark); color: #ccc; padding: 50px 5% 30px; margin-top: 80px; text-align: center; }
+    .ft-brand-name { font-size: 1.5rem; font-weight: 900; color: var(--peach); margin-bottom: 12px; }
+    .ft-tagline { font-size: 0.9rem; line-height: 1.8; color: #888; max-width: 450px; margin: 0 auto 24px; }
+    .footer-links { margin-bottom: 24px; }
+    .footer-links a { color: #888; text-decoration: none; font-weight: 700; transition: color 0.2s; font-size: 0.9rem; }
+    .footer-links a:hover { color: white; }
+    .footer-bottom { border-top: 1px solid #3a3a3a; padding-top: 24px; font-size: 0.85rem; color: #555; }
+  </style>
+</head>
+
+<body>
+
+  <header>
+    <div class="logo-wrap" onclick="showPage('home')">
+      <div class="logo-img-box">
+        <span id="logo-emoji">🎁</span>
+        <img id="logo-img" src="data/t51.png" alt="Kasu Gifts"
+          onload="this.style.display='block';document.getElementById('logo-emoji').style.display='none';"
+          onerror="this.style.display='none';">
+      </div>
+      <span class="logo-name">Kasu Gifts</span>
+    </div>
+    <div class="header-right">
+      <a class="hbtn" href="https://www.instagram.com/kasugifts/" target="_blank">📞 <span>Contact</span></a>
+      <button class="hbtn" onclick="openTrack()">📦 <span>Track Order</span></button>
+      <button class="hbtn primary" onclick="openCart()">🛒 <div class="cart-badge" id="cart-count">0</div></button>
+    </div>
+  </header>
+
+  <div id="page-home" class="page active">
+    <div class="home-wrap">
+      <div class="section-title">All Products</div>
+      <div class="products-grid" id="products-grid">
+        <div class="load-txt"><div class="loader"></div></div>
+      </div>
+    </div>
+  </div>
+  <div id="page-detail" class="page"></div>
+
+  <!-- Global Modal for viewing images full screen -->
+  <div class="img-modal" id="img-modal" onclick="closeImgModal(event)">
+    <button class="img-modal-close" onclick="closeImgModal(event)">✕</button>
+    <img id="img-modal-src" src="">
+  </div>
+
+  <div class="overlay" id="overlay" onclick="closeAll()"></div>
+
+  <div class="panel" id="cart-panel">
+    <div class="panel-hdr">
+      <h2>🛒 Your Cart</h2><button class="close-btn" onclick="closeAll()">✕</button>
+    </div>
+    <div class="panel-body" id="cart-body"></div>
+    <div class="panel-foot" id="cart-foot" style="display:none;">
+      <div class="cart-total-row"><span class="ct-lbl">Total Amount</span><span class="ct-amt" id="cart-total-val">₹0</span></div>
+      <button class="btn-primary" onclick="openCheckout()">Proceed to Checkout →</button>
+    </div>
+  </div>
+
+  <div class="panel" id="checkout-panel">
+    <div class="panel-hdr">
+      <h2>🛍️ Checkout</h2><button class="close-btn" onclick="closeAll()">✕</button>
+    </div>
+    <div class="panel-body" id="checkout-body"></div>
+  </div>
+
+  <div class="panel" id="track-panel">
+    <div class="panel-hdr">
+      <h2>📦 Track Your Order</h2><button class="close-btn" onclick="closeAll()">✕</button>
+    </div>
+    <div class="panel-body">
+      <div class="track-search-card">
+        <h3>📱 Track by Phone Number</h3>
+        <p>Enter the mobile number you used when placing your order</p>
+        <div class="track-search-row">
+          <input id="track-search-input" type="tel" placeholder="Enter 10-digit mobile number" maxlength="10"
+            inputmode="numeric" pattern="[0-9]*" onkeydown="if(event.key==='Enter')searchOrder()"
+            oninput="this.value=this.value.replace(/\D/g,'')">
+          <button class="track-search-btn" id="track-search-btn" onclick="searchOrder()">Track →</button>
+        </div>
+      </div>
+      <div id="track-search-result"></div>
+      <div class="track-divider" id="track-divider" style="display:none;"><span>Your Orders on This Device</span></div>
+      <div id="orders-list"></div>
+    </div>
+  </div>
+
+  <div class="toast" id="toast"></div>
+
+  <footer>
+    <div class="ft-brand-name">🎁 Kasu Gifts</div>
+    <p class="ft-tagline">Making every moment magical with thoughtfully curated gifts for your loved ones across India.</p>
+    <div class="footer-links"><a href="return.html">📋 Return Policy</a></div>
+    <div class="footer-bottom">© 2025 Kasu Gifts. All rights reserved. Made with ❤️ in India</div>
+  </footer>
+
+  <script>
+    const SB_URL = 'https://aawhuykfhjsjtwrstnvt.supabase.co';
+    const SB_KEY = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFhd2h1eWtmaGpzanR3cnN0bnZ0Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NzI2OTAxMDQsImV4cCI6MjA4ODI2NjEwNH0.6EE9pY3rFBmvgs6c5hHQ4WMnHp8XIm-dV9V-J2129sk';
+let tempCustomImages = [];
+    const DEFAULT_DESC = `The **Love Pearl Oyster Gift Set** is the ultimate romantic surprise — a real freshwater Pearl hidden inside a live oyster, beautifully presented in a heart-shaped velvet jewel box. 💕
+	let selectedPayment = 'cod';
+✨ Real Freshwater Pearl — authentic & unique, nature's own surprise
+💝 Heart-Shaped Velvet Jewelry Box — luxurious black velvet display included
+📿 Silver Cage Pendant & Chain — wear your pearl immediately after unboxing
+🌸 Premium Pink Gift Box — beautifully packaged, zero wrapping needed
+🎉 Perfect for Birthdays, Anniversaries & Valentine's Day — for all occasions
+💌 Personalized Wish Card — add your heartfelt message`;
+
+    const DUMMY_PRODUCTS = [{
+      id: 1, name: 'Love Pearl Oyster Gift Set', tag: 'Romantic Gift Sets',
+      price: 699, original_price: 1499, rating: 4.9, review_count: 247,
+      emoji: '🦪', description: DEFAULT_DESC,
+      variants: [
+        { label: 'Standard', price: 699 },
+        { label: 'Premium', price: 999 },
+        { label: 'Deluxe', price: 1299 }
+      ]
+    }];
+
+    const SEED_REVIEWS = [
+      { id: 's1', name: 'Priya S.', rating: 5, text: 'Absolutely magical! The pearl is beautiful and the pendant is elegant.', created_at: new Date(Date.now() - 86400000 * 2).toISOString(), verified: true, image_url: 'https://placehold.co/400x400/da6e59/ffffff?text=Happy+Customer' },
+      { id: 's2', name: 'Rahul K.', rating: 5, text: 'Gifted to my wife for our anniversary. She was amazed!', created_at: new Date(Date.now() - 86400000 * 5).toISOString(), verified: true }
+    ];
+
+    const store = {
+      get: (k, d) => { try { const v = localStorage.getItem(k); return v ? JSON.parse(v) : d; } catch (e) { return d; } },
+      set: (k, v) => { try { localStorage.setItem(k, JSON.stringify(v)); } catch (e) { } }
+    };
+
+    function uuidv4() {
+      return 'xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx'.replace(/[xy]/g, c => {
+        const r = Math.random() * 16 | 0, v = c === 'x' ? r : (r & 0x3 | 0x8); return v.toString(16);
+      });
+    }
+    function getDevice() {
+      const ua = navigator.userAgent;
+      if (/(tablet|ipad|playbook|silk)|(android(?!.*mobi))/i.test(ua)) return 'Tablet';
+      if (/Mobile|iPhone|Android|BlackBerry|IEMobile/i.test(ua)) return 'Mobile';
+      return 'Desktop';
+    }
+async function processCustomImages(input) {
+  const files = Array.from(input.files);
+  if (files.length !== 6) {
+    showToast('⚠️ Please select exactly 6 photos.');
+    input.value = '';
+    return;
+  }
+  
+  showToast('⏳ Processing images... Please wait.');
+  const grid = document.getElementById('custom-img-grid');
+  grid.innerHTML = '<div class="loader" style="width:24px;height:24px;border-width:2px;margin:10px auto;"></div>';
+  
+  tempCustomImages = [];
+  for (let file of files) {
+     try {
+       // Compress to 600px to ensure the database payload isn't too large
+       const compressed = await compressImage(file, 600); 
+       tempCustomImages.push(compressed);
+     } catch(e) {
+       console.error('Image compression failed', e);
+     }
+  }
+  
+  if (tempCustomImages.length === 6) {
+    grid.innerHTML = tempCustomImages.map(src => `<img src="${src}" class="custom-img-thumb">`).join('');
+    showToast('✅ 6 photos uploaded successfully!');
+  } else {
+    grid.innerHTML = '';
+    tempCustomImages = [];
+    input.value = '';
+    showToast('⚠️ Error processing images. Please try again.');
+  }
+}
+    async function sb(path, method = 'GET', body = null) {
+      const h = { 'apikey': SB_KEY, 'Authorization': `Bearer ${SB_KEY}`, 'Content-Type': 'application/json' };
+      if (method === 'POST') h['Prefer'] = 'return=representation';
+      if (method === 'PATCH') h['Prefer'] = 'return=minimal';
+      const ctrl = new AbortController();
+      const tid = setTimeout(() => ctrl.abort(), 6000);
+      try {
+        const r = await fetch(`${SB_URL}/rest/v1/${path}`, { method, headers: h, signal: ctrl.signal, body: body ? JSON.stringify(body) : undefined });
+        clearTimeout(tid);
+        const txt = await r.text();
+        if (!r.ok) { console.error(`SB ${method} ${path}:`, txt); throw new Error(txt); }
+        return txt ? JSON.parse(txt) : [];
+      } catch (e) { clearTimeout(tid); throw e; }
+    }
+
+    let products = [], checkoutAddress = null, checkoutStep = 1;
+    
+    let countdownTarget = 0, timerInterval = null, pickedRating = 5;
+    let cart = store.get('kasu_cart', []);
+    let orderIds = store.get('kasu_orders', []);
+    let sessionId = null;
+    let activeMs = 0;
+    let lastVis = Date.now();
+    let cartFired = false;
+    let buyNowItem = null;
+    let lastOrderId = '';
+
+    // ── COUPON SYSTEM ──
+    let appliedCoupon = null;
+    let availableCoupons = [];
+
+    // ── VARIANTS ──
+    let selectedVariants = {};
+
+    const STATES = ['Andhra Pradesh','Arunachal Pradesh','Assam','Bihar','Chhattisgarh','Delhi','Goa','Gujarat','Haryana','Himachal Pradesh','Jammu & Kashmir','Jharkhand','Karnataka','Kerala','Ladakh','Madhya Pradesh','Maharashtra','Manipur','Meghalaya','Mizoram','Nagaland','Odisha','Punjab','Rajasthan','Sikkim','Tamil Nadu','Telangana','Tripura','Uttar Pradesh','Uttarakhand','West Bengal'].sort();
+
+    const STATUSES = ['processing','confirmed','packed','shipped','out_for_delivery','delivered'];
+    const STATUS_INFO = {
+      processing: { icon: '📋', label: 'Order Placed' },
+      confirmed:  { icon: '✅', label: 'Confirmed' },
+      packed:     { icon: '📦', label: 'Packed' },
+      shipped:    { icon: '🚚', label: 'Shipped' },
+      out_for_delivery: { icon: '🛵', label: 'Out for Delivery' },
+      delivered:  { icon: '🏠', label: 'Delivered' }
+    };
+
+    async function init() {
+  updateBadge();
+  initSession();
+
+  await Promise.all([
+    loadProducts(),
+    loadCoupons()
+  ]);
+
+  const params = new URLSearchParams(window.location.search);
+  
+  // Track Affiliate Referral Link
+  const refCode = params.get('ref');
+  if (refCode) {
+    sessionStorage.setItem('kasu_affiliate_ref', refCode.toUpperCase());
+    showToast('🎉 ₹50 Referral Discount unlocked!');
+  }
+
+  const pid = params.get('product');
+  if (pid) openProduct(parseInt(pid));
+}
+
+    // ── SESSION ──
+    async function initSession() {
+      let sid = sessionStorage.getItem('kasu_sid');
+      if (!sid) {
+        sid = uuidv4();
+        sessionStorage.setItem('kasu_sid', sid);
+        let userIP = 'Unknown';
+        try { const r = await fetch('https://api.ipify.org?format=json'); const d = await r.json(); if (d.ip) userIP = d.ip; } catch (e) { }
+        try { await sb('session', 'POST', { date: new Date().toISOString(), session_id: sid, added_cart: false, time_spent: '0s', device: getDevice(), ip_address: userIP }); } catch (e) { }
+      }
+      sessionId = sid;
+      document.addEventListener('visibilitychange', () => {
+        if (document.visibilityState === 'visible') { lastVis = Date.now(); }
+        else { activeMs += (Date.now() - lastVis); patchSession(); }
+      });
+      setInterval(() => {
+        if (document.visibilityState === 'visible') { activeMs += (Date.now() - lastVis); lastVis = Date.now(); patchSession(); }
+      }, 15000);
+    }
+
+    function patchSession() {
+      if (!sessionId) return;
+      const sec = Math.floor(activeMs / 1000);
+      sb(`session?session_id=eq.${sessionId}`, 'PATCH', { time_spent: `${sec}s`, added_cart: cartFired }).catch(() => {});
+    }
+    function fireCartAdded() { if (cartFired) return; cartFired = true; patchSession(); }
+
+    // ── COUPON FETCHER ──
+    async function loadCoupons() {
+      try {
+        const rows = await sb('coupons?active=eq.true&select=*');
+        if (rows && rows.length) {
+          availableCoupons = rows;
+        } else {
+          availableCoupons = [
+            { code: 'WELCOME100', discount_type: 'flat', discount_value: 100, min_order: 500, description: 'Welcome offer' },
+            { code: 'SAVE10', discount_type: 'percent', discount_value: 10, min_order: 0, description: '10% off' },
+            { code: 'KASU50', discount_type: 'flat', discount_value: 50, min_order: 300, description: 'Special discount' }
+          ];
+        }
+      } catch (e) {
+        availableCoupons = [
+          { code: 'WELCOME100', discount_type: 'flat', discount_value: 100, min_order: 500, description: 'Welcome offer' },
+          { code: 'SAVE10', discount_type: 'percent', discount_value: 10, min_order: 0, description: '10% off' },
+          { code: 'KASU50', discount_type: 'flat', discount_value: 50, min_order: 300, description: 'Special discount' }
+        ];
+      }
+    }
+
+    // ── PRODUCTS ──
+    async function loadProducts() {
+      try {
+        const rows = await sb('products?select=*&order=id');
+        products = rows.length ? rows : DUMMY_PRODUCTS;
+        products = products.map(p => ({
+          ...p,
+          variants: typeof p.variants === 'string'
+            ? (() => { try { return JSON.parse(p.variants); } catch(e) { return null; } })()
+            : (p.variants || null)
+        }));
+        try {
+          const revs = await sb('reviews?select=product_id,rating');
+          if (revs.length) {
+            products.forEach(p => {
+              const pr = revs.filter(r => r.product_id === p.id);
+              if (pr.length) { p.review_count = pr.length; p.rating = (pr.reduce((a,r) => a + r.rating, 0) / pr.length).toFixed(1); }
+            });
+          }
+        } catch (e) {}
+      } catch (e) { products = DUMMY_PRODUCTS; }
+      renderGrid();
+    }
+
+    function renderGrid() {
+      const grid = document.getElementById('products-grid');
+      if (!products.length) { grid.innerHTML = '<p style="color:var(--mid)">No products found.</p>'; return; }
+      grid.innerHTML = products.map(p => {
+        const disc = p.original_price ? Math.round((1 - p.price / p.original_price) * 100) : 0;
+        const priceLabel = p.variants && p.variants.length
+          ? `from ₹${Math.min(...p.variants.map(v => v.price)).toLocaleString('en-IN')}`
+          : `₹${p.price.toLocaleString('en-IN')}`;
+        const img = p.image_url
+          ? `<img class="pc-img" src="${p.image_url}" onerror="this.outerHTML='<div class=\\'pc-emoji-placeholder\\'>${p.emoji || '🎁'}</div>'">`
+          : `<div class="pc-emoji-placeholder">${p.emoji || '🎁'}</div>`;
+        return `<div class="product-card" onclick="openProduct(${p.id})">
+          ${img}
+          <div class="pc-body">
+            <div class="pc-tag">${p.tag || 'Gift Set'}</div>
+            <div class="pc-name">${p.name}</div>
+            ${p.variants && p.variants.length ? `<div style="font-size:0.75rem;color:var(--mid);margin-bottom:6px;font-weight:700;">${p.variants.length} variants available</div>` : ''}
+            <div class="pc-stars">⭐ ${p.rating || 5} (${p.review_count || 0})</div>
+            <div class="pc-price-row">
+              <span class="pc-price">${priceLabel}</span>
+              ${p.original_price && !p.variants ? `<span class="pc-old">₹${p.original_price}</span>` : ''}
+              ${disc > 0 && !p.variants ? `<span class="pc-disc">${disc}% OFF</span>` : ''}
+            </div>
+          </div>
+        </div>`;
+      }).join('');
+    }
+
+    function parseDesc(desc) {
+      if (!desc) return '';
+      desc = desc.replace(/\*\*(.*?)\*\*/g, '<strong>$1</strong>');
+      const lines = desc.split('\n').map(l => l.trim()).filter(Boolean);
+      let html = '', inList = false;
+      lines.forEach(line => {
+        const hasDash = line.includes('—') || line.includes(' - ');
+        const sp = line.indexOf(' '); const fw = sp > -1 ? line.substring(0, sp) : '';
+        const isFeat = fw && !/[a-zA-Z]/.test(fw) && hasDash;
+        if (isFeat) {
+          if (!inList) { html += '<div class="desc-feature-list">'; inList = true; }
+          const rest = line.substring(sp + 1); const di = rest.includes('—') ? rest.indexOf('—') : rest.indexOf(' - ');
+          let title = rest.substring(0, di).trim(); const body = rest.substring(di + (rest.includes('—') ? 1 : 3)).trim();
+          if (!title.includes('<strong>')) title = `<strong>${title}</strong>`;
+          html += `<div class="desc-feature-item"><span class="df-emoji">${fw}</span><div class="df-text">${title} — ${body}</div></div>`;
+        } else {
+          if (inList) { html += '</div>'; inList = false; }
+          html += `<p class="desc-text">${line}</p>`;
+        }
+      });
+      if (inList) html += '</div>';
+      return html;
+    }
+
+    function getActiveVariant(p) {
+      if (!p.variants || !p.variants.length) return null;
+      const idx = selectedVariants[p.id] ?? 0;
+      return p.variants[idx];
+    }
+    function getEffectivePrice(p) {
+      const v = getActiveVariant(p);
+      return v ? v.price : p.price;
+    }
+
+    function renderVariantSelector(p) {
+      if (!p.variants || !p.variants.length) return '';
+      const activeIdx = selectedVariants[p.id] ?? 0;
+      const activeVariant = p.variants[activeIdx];
+      return `
+        <div class="variant-selector">
+          <span class="variant-label">Variant: <span>${esc(activeVariant.label)}</span></span>
+          <div class="variant-options">
+            ${p.variants.map((v, i) => `
+              <button type="button" class="variant-btn ${i === activeIdx ? 'active' : ''}" onclick="selectVariant(${p.id}, ${i})">
+                <span>${esc(v.label)}</span>
+                <span class="vb-price">₹${v.price.toLocaleString('en-IN')}</span>
+              </button>
+            `).join('')}
+          </div>
+        </div>`;
+    }
+
+    function selectVariant(productId, variantIdx) {
+      selectedVariants[productId] = variantIdx;
+      const p = products.find(x => x.id === productId);
+      if (!p) return;
+      const variant = p.variants[variantIdx];
+      const effectivePrice = variant.price;
+      const disc = p.original_price ? Math.round((1 - effectivePrice / p.original_price) * 100) : 0;
+
+      document.querySelectorAll('.variant-btn').forEach((btn, i) => { btn.classList.toggle('active', i === variantIdx); });
+      document.querySelector('.variant-label span').textContent = variant.label;
+
+      const priceMain = document.getElementById('det-price-main');
+      const priceSave = document.getElementById('det-price-save');
+      const priceDisc = document.getElementById('det-price-disc');
+      const buyBtn    = document.getElementById('det-buy-btn');
+
+      if (priceMain) priceMain.textContent = `₹${effectivePrice.toLocaleString('en-IN')}`;
+      if (priceSave && p.original_price) {
+        const saved = p.original_price - effectivePrice;
+        priceSave.textContent = saved > 0 ? `🎁 You Save ₹${saved} — Today Only!` : '';
+        priceSave.style.display = saved > 0 ? '' : 'none';
+      }
+      if (priceDisc) {
+        priceDisc.textContent = disc > 0 ? `${disc}% OFF` : '';
+        priceDisc.style.display = disc > 0 ? '' : 'none';
+      }
+      if (buyBtn) buyBtn.textContent = `Buy Now — Only ₹${effectivePrice.toLocaleString('en-IN')}! 🎁`;
+    }
+       async function openProduct(id) {
+      pickedRating = 5;
+      const p = products.find(x => x.id === id); if (!p) return;
+      tempCustomImages = []; // Reset on new product open
+
+      if (p.variants && p.variants.length && selectedVariants[p.id] == null) {
+        selectedVariants[p.id] = 0;
+      }
+
+      const effectivePrice = getEffectivePrice(p);
+      const disc = p.original_price ? Math.round((1 - effectivePrice / p.original_price) * 100) : 0;
+          countdownTarget = p.offer_end_time
+        ? new Date(p.offer_end_time).getTime()
+        : getPersistentCountdown();
+
+      const imgs = [p.image_url, p.image_url_2, p.image_url_3].filter(Boolean);
+      const slides = imgs.length
+        ? imgs.map(u => `<img class="gallery-slide" src="${u}" onerror="this.outerHTML='<div class=\\'gallery-slide\\'>${p.emoji || '🎁'}</div>'">`).join('')
+        : `<div class="gallery-slide">${p.emoji || '🎁'}</div>`;
+      const thumbs = imgs.length > 1
+        ? imgs.map((u, i) => `<div class="thumb-item ${i === 0 ? 'active' : ''}" onclick="goSlide(${i},this)"><img src="${u}"></div>`).join('')
+        : '';
+
+      // Safely check if custom is boolean true or text "true"
+      const isCustom = (p.custom === true || String(p.custom).toLowerCase() === 'true');
+
+      document.getElementById('page-detail').innerHTML = `
+        <div class="detail-wrap">
+          <button class="back-btn" onclick="showPage('home')">← Back to Products</button>
+          <div class="detail-grid">
+            <div>
+              <div class="gallery-container">
+                ${disc > 0 ? `<div class="gallery-disc-badge">${disc}% OFF</div>` : ''}
+                <div class="gallery-carousel" id="carousel">${slides}</div>
+              </div>
+              ${thumbs ? `<div class="thumb-row" id="thumbs">${thumbs}</div>` : ''}
+            </div>
+            <div>
+              <div class="det-tag">♥ ${p.tag || 'Gift Set'}</div>
+              <h1 class="det-title">${p.name}</h1>
+              <div class="det-stars">
+                <span style="color:#f7b731" id="det-stars">${'⭐'.repeat(Math.round(parseFloat(p.rating) || 5))}</span>
+                <span id="det-count">${p.rating || 5} (${p.review_count || 0} reviews)</span>
+              </div>
+              ${renderVariantSelector(p)}
+              
+              ${isCustom ? `
+              <div class="custom-upload-wrap">
+                <h4>📸 Custom Product (Requires 6 Photos)</h4>
+                <p>Please select exactly 6 photos to customize your gift.</p>
+                <button type="button" class="upload-btn-styled" onclick="document.getElementById('custom-file-input').click()">Select 6 Photos</button>
+                <input type="file" id="custom-file-input" multiple accept="image/*" style="display:none" onchange="processCustomImages(this)">
+                <div class="custom-img-grid" id="custom-img-grid"></div>
+              </div>` : ''}
+
+              <div class="price-card">
+                <div class="price-main" id="det-price-main">₹${effectivePrice.toLocaleString('en-IN')}</div>
+                <div class="price-sub">
+                  ${p.original_price ? `<span class="price-old">₹${p.original_price}</span>` : ''}
+                  ${disc > 0 ? `<span class="disc-pill" id="det-price-disc">${disc}% OFF</span>` : `<span class="disc-pill" id="det-price-disc" style="display:none"></span>`}
+                </div>
+                ${p.original_price
+                  ? `<div class="save-line" id="det-price-save">🎁 You Save ₹${p.original_price - effectivePrice} — Today Only!</div>`
+                  : `<div id="det-price-save" style="display:none"></div>`}
+                <div class="tax-line">Inclusive of all taxes · Free shipping</div>
+              </div>
+              <div class="timer-card">
+                <div class="timer-lbl">⏳ Offer Expires In</div>
+                <div class="timer-blocks" id="main-timer"></div>
+              </div>
+              <button class="btn-primary" id="det-buy-btn" onclick="buyNow(${p.id})">
+                Buy Now — Only ₹${effectivePrice.toLocaleString('en-IN')}! 🎁
+              </button>
+              <button class="btn-secondary" onclick="addToCart(${p.id})">🛒 Add to Cart</button>
+
+              <div class="feature-badges-wrap">
+                <div class="feat-badge"><span class="ico">✓</span> Cash on Delivery Available</div>
+                <div class="feat-badge"><span class="ico">✓</span> Free Delivery Across India</div>
+                <div class="feat-badge"><span class="ico">✓</span> 7-Day Replacement Guarantee</div>
+                <div class="feat-badge"><span class="ico">✓</span> 1000+ Happy Customers</div>
+              </div>
+
+            </div>
+          </div>
+          <div class="product-content-stack">
+            <h3 class="section-heading">Description</h3>
+            <div class="desc-box">${parseDesc(p.description || DEFAULT_DESC)}</div>
+            <div class="reviews-section">
+              <h3 class="section-heading">Customer Reviews</h3>
+              <div id="rev-wrap"><div class="loader"></div></div>
+            </div>
+          </div>
+        </div>`;
+
+      showPage('detail');
+      startTimer();
+      const c = document.getElementById('carousel');
+      if (c) c.addEventListener('scroll', () => {
+        const idx = Math.round(c.scrollLeft / c.clientWidth);
+        document.querySelectorAll('#thumbs .thumb-item').forEach((t, i) => t.classList.toggle('active', i === idx));
+      });
+      loadReviews(id);
+    }
+
+      function addToCart(pid) {
+      const p = products.find(x => x.id === pid); if (!p) return;
+      const isCustom = (p.custom === true || String(p.custom).toLowerCase() === 'true');
+      
+      if (isCustom && tempCustomImages.length !== 6) {
+        showToast('⚠️ Please upload exactly 6 photos for this custom product.');
+        return;
+      }
+
+      fireCartAdded();
+      const variant    = getActiveVariant(p);
+      const price      = variant ? variant.price : p.price;
+      const variantKey = variant ? `${pid}_${variant.label}` : `${pid}`;
+
+      const ex = cart.find(c => String(c.cart_key) === String(variantKey));
+      if (ex) {
+        ex.qty++;
+        if (isCustom) ex.custom_images = [...tempCustomImages]; 
+      } else {
+        cart.push({
+          cart_key:    variantKey,
+          product_id:  p.id,
+          name:        p.name,
+          price:       price,
+          emoji:       p.emoji || '🎁',
+          image_url:   p.image_url || '',
+          qty:         1,
+          variant:     variant ? variant.label : null,
+          custom_images: isCustom ? [...tempCustomImages] : null
+        });
+      }
+      
+      tempCustomImages = []; // Clear memory
+      if (document.getElementById('custom-img-grid')) document.getElementById('custom-img-grid').innerHTML = '';
+      if (document.getElementById('custom-file-input')) document.getElementById('custom-file-input').value = '';
+
+      saveCart(); updateBadge(); openCart();
+    }
+
+        function buyNow(pid) {
+      const p = products.find(x => x.id === pid); if (!p) return;
+      const isCustom = (p.custom === true || String(p.custom).toLowerCase() === 'true');
+
+      if (isCustom && tempCustomImages.length !== 6) {
+        showToast('⚠️ Please upload exactly 6 photos for this custom product.');
+        return;
+      }
+
+      const variant = getActiveVariant(p);
+      const price   = variant ? variant.price : p.price;
+      buyNowItem = {
+        cart_key:   variant ? `${pid}_${variant.label}` : `${pid}`,
+        product_id: p.id,
+        name:       p.name,
+        price:      price,
+        emoji:      p.emoji || '🎁',
+        image_url:  p.image_url || '',
+        qty:        1,
+        variant:    variant ? variant.label : null,
+        custom_images: isCustom ? [...tempCustomImages] : null
+      };
+
+      tempCustomImages = []; // Clear memory
+
+      closeAll();
+      checkoutStep = 1;
+      appliedCoupon = null; 
+      renderCheckout();
+      openPanel('checkout-panel');
+    }
+
+    function openCart() { closeAll(); renderCart(); openPanel('cart-panel'); }
+
+    function renderCart() {
+      const body = document.getElementById('cart-body'), foot = document.getElementById('cart-foot');
+      if (!cart.length) {
+        body.innerHTML = `<div class="cart-empty"><div class="ce-ico">🛒</div><p style="font-weight:800;margin-bottom:6px;">Your cart is empty</p><p style="color:var(--mid);font-size:0.9rem;">Add some gifts to get started!</p></div>`;
+        foot.style.display = 'none'; return;
+      }
+      const total = cart.reduce((a, c) => a + c.price * c.qty, 0);
+      body.innerHTML = cart.map(item => `
+        <div class="cart-item">
+          <div class="ci-img">${item.image_url ? `<img src="${item.image_url}" onerror="this.parentElement.textContent='${item.emoji}'">` : item.emoji}</div>
+          <div class="ci-info">
+            <div class="ci-name">${item.name}</div>
+            ${item.variant ? `<div class="ci-variant">Variant: ${esc(item.variant)}</div>` : ''}
+            ${item.custom_images ? `<div style="font-size:0.75rem;color:var(--green);font-weight:700;margin-bottom:4px;">📸 6 Custom Photos Attached</div>` : ''}
+            <div class="ci-price">₹${(item.price * item.qty).toLocaleString('en-IN')}</div>
+          </div>
+          <div class="ci-qty-ctrl">
+            <button class="qty-btn minus" onclick="decCart('${String(item.cart_key).replace(/'/g, "\\'")}')">−</button>
+            <span class="qty-num">${item.qty}</span>
+            <button class="qty-btn" onclick="incCart('${String(item.cart_key).replace(/'/g, "\\'")}')">+</button>
+          </div>
+        </div>`).join('');
+      document.getElementById('cart-total-val').textContent = `₹${total.toLocaleString('en-IN')}`;
+      foot.style.display = 'block';
+    }
+
+  function renderCheckout() {
+  const body  = document.getElementById('checkout-body');
+  const items = buyNowItem ? [buyNowItem] : cart;
+  const subtotal = items.reduce((a, c) => a + c.price * c.qty, 0);
+
+  // Validate applied coupon
+  if (appliedCoupon && appliedCoupon.min_order && subtotal < appliedCoupon.min_order) {
+    appliedCoupon = null;
+    showToast('Coupon removed: Minimum order not met.');
+  }
+
+  const validCoupons = availableCoupons.filter(c => !c.min_order || subtotal >= c.min_order);
+
+  let couponDiscount = 0;
+  let discountRowsHtml = ``;
+  let affiliateRef = sessionStorage.getItem('kasu_affiliate_ref');
+
+  // If a standard coupon is applied
+  if (appliedCoupon) {
+    if (appliedCoupon.discount_type === 'percent') {
+      couponDiscount = Math.round(subtotal * (appliedCoupon.discount_value / 100));
+    } else {
+      couponDiscount = appliedCoupon.discount_value;
+    }
+    if (couponDiscount > subtotal) couponDiscount = subtotal;
+    
+    discountRowsHtml += `<div class="os-row" style="color:var(--green);">
+      <span>Discount (${appliedCoupon.code}) <button onclick="removeCoupon()" style="background:none;border:none;color:var(--coral);font-weight:800;font-size:0.75rem;cursor:pointer;">[Remove]</button></span>
+      <span>-₹${couponDiscount.toLocaleString('en-IN')}</span>
+    </div>`;
+  } 
+  // If NO standard coupon is applied, but they have an affiliate referral link active
+  else if (affiliateRef) {
+    couponDiscount = 50; // Flat 50 RS Discount for Affiliates
+    if (couponDiscount > subtotal) couponDiscount = subtotal;
+
+    discountRowsHtml += `<div class="os-row" style="color:var(--green);">
+      <span>Referral Discount (${affiliateRef})</span>
+      <span>-₹${couponDiscount.toLocaleString('en-IN')}</span>
+    </div>`;
+  }
+
+  let finalTotal = subtotal - couponDiscount;
+  if (finalTotal < 0) finalTotal = 0;
+
+  const steps = `<div class="chk-steps">
+    <div class="chk-step ${checkoutStep === 1 ? 'active' : checkoutStep > 1 ? 'done' : ''}">📍 Address</div>
+    <div class="chk-step ${checkoutStep === 2 ? 'active' : ''}">💳 Payment</div>
+  </div>`;
+
+  if (checkoutStep === 1) {
+    const a = checkoutAddress || {};
+    body.innerHTML = `${steps}
+      <h3 style="font-size:1.05rem;font-weight:900;margin-bottom:16px;">Delivery Details</h3>
+      <div class="form-group"><label>Full Name *</label><input id="f-name" type="text" placeholder="Enter your full name" value="${a.name || ''}"><div class="err-msg" id="e-name">Please enter your name</div></div>
+      <div class="form-group"><label>Mobile Number *</label><input id="f-mobile" type="tel" placeholder="10-digit number" maxlength="10" value="${a.mobile || ''}"><div class="err-msg" id="e-mobile">Enter a valid 10-digit number</div></div>
+      <div class="form-group"><label>PIN Code *</label><input id="f-pin" type="text" placeholder="6-digit PIN" maxlength="6" value="${a.pin || ''}"><div class="err-msg" id="e-pin">Enter a valid 6-digit PIN</div></div>
+      <div class="form-group"><label>Address *</label><input id="f-addr" type="text" placeholder="House no., Street, Area" value="${a.addr || ''}"><div class="err-msg" id="e-addr">Please enter your address</div></div>
+      <div class="form-row">
+        <div class="form-group"><label>City *</label><input id="f-city" type="text" placeholder="City" value="${a.city || ''}"><div class="err-msg" id="e-city">Required</div></div>
+        <div class="form-group"><label>State *</label><select id="f-state"><option value="">Select State</option>${STATES.map(s => `<option value="${s}" ${a.state === s ? 'selected' : ''}>${s}</option>`).join('')}</select><div class="err-msg" id="e-state">Required</div></div>
+      </div>
+      <button class="btn-primary" onclick="validateAddr()">Continue to Payment →</button>`;
+
+  } else if (checkoutStep === 2) {
+    body.innerHTML = `${steps}
+
+      <div class="coupon-section">
+        <div style="font-size:0.85rem;font-weight:800;margin-bottom:8px;text-transform:uppercase;color:var(--mid);">Have a Promo Code?</div>
+        <div class="coupon-input-row">
+          <input id="coupon-input" type="text" placeholder="Enter code" value="${appliedCoupon ? appliedCoupon.code : ''}" ${appliedCoupon ? 'disabled' : ''}>
+          <button class="coupon-btn" onclick="applyCouponManually()" ${appliedCoupon ? 'disabled' : ''}>Apply</button>
+        </div>
+        ${!appliedCoupon && validCoupons.length > 0 ? `
+          <div class="suggested-tags">
+            ${validCoupons.map(c => `
+              <div class="coup-tag" onclick="applyCoupon('${c.code}')">
+                <strong>${c.code}</strong> • ${c.discount_type === 'percent' ? c.discount_value + '% OFF' : '₹' + c.discount_value + ' OFF'}
+              </div>
+            `).join('')}
+          </div>
+        ` : ''}
+      </div>
+
+      <div class="order-summary">
+        <div style="font-size:0.85rem;color:var(--mid);font-weight:800;margin-bottom:12px;text-transform:uppercase;">Order Summary</div>
+        ${items.map(c => `
+          <div class="os-row">
+            <span>
+              ${c.name}${c.variant ? ` <span style="font-size:0.8em;color:var(--mid);">(${esc(c.variant)})</span>` : ''} 
+              × ${c.qty}
+              ${c.custom_images ? `<br><span style="font-size:0.75em;color:var(--green)">📸 6 Custom Photos Attached</span>` : ''}
+            </span>
+            <span>₹${(c.price * c.qty).toLocaleString('en-IN')}</span>
+          </div>`).join('')}
+        <div class="os-row"><span>Delivery</span><span style="color:var(--green);font-weight:800;">FREE</span></div>
+        ${discountRowsHtml}
+        <div class="os-total"><span>Total</span><span style="color:var(--coral);">₹${finalTotal.toLocaleString('en-IN')}</span></div>
+      </div>
+
+      <div style="font-size:0.95rem;font-weight:900;margin-bottom:14px;">Payment Method</div>
+
+      <div class="pay-option selected">
+        <div class="pay-ico">💵</div>
+        <div class="pay-info">
+          <div class="pay-title">Cash on Delivery</div>
+          <div class="pay-desc">Pay <strong>₹${finalTotal.toLocaleString('en-IN')}</strong> when your order arrives</div>
+        </div>
+        <div class="pay-check">✓</div>
+      </div>
+
+      <button class="btn-primary" onclick="placeOrder()">
+        Place Order — Pay ₹${finalTotal.toLocaleString('en-IN')} on Delivery 🎁
+      </button>
+      <button class="btn-secondary" onclick="checkoutStep=1;renderCheckout()">← Back</button>
+      <div style="text-align:center;margin-top:18px;">
+        <a href="return.html" target="_blank" style="font-size:0.85rem;color:var(--mid);text-decoration:underline;font-weight:700;">📋 Return Policy</a>
+      </div>`;
+  }
+}
+
+    
+    function goSlide(idx, el) {
+      const c = document.getElementById('carousel'); if (!c) return;
+      c.scrollTo({ left: idx * c.clientWidth, behavior: 'smooth' });
+      document.querySelectorAll('#thumbs .thumb-item').forEach((t, i) => t.classList.toggle('active', i === idx));
+    }
+
+    /* ── FULL SCREEN IMAGE VIEWER ── */
+    function openImgModal(src) {
+      document.getElementById('img-modal-src').src = src;
+      document.getElementById('img-modal').classList.add('show');
+    }
+    function closeImgModal(e) {
+      if (e.target.tagName !== 'IMG') {
+        document.getElementById('img-modal').classList.remove('show');
+      }
+    }
+
+    // ── REVIEWS ──
+    async function loadReviews(pid) {
+      const wrap = document.getElementById('rev-wrap'); if (!wrap) return;
+      let dbRevs = [];
+      try { dbRevs = await sb(`reviews?product_id=eq.${pid}&order=id.desc`); } catch (e) {}
+      const all = dbRevs.length ? dbRevs : SEED_REVIEWS;
+      let isVerified = false;
+
+      // Verify Purchaser status locally
+      if (orderIds.length) {
+        try {
+          const ids = orderIds.map(id => `order_id.eq.${id}`).join(',');
+          const orders = await sb(`orders?or=(${ids})&select=items,status`);
+          for (const o of orders) {
+            const items = typeof o.items === 'string' ? JSON.parse(o.items) : (o.items || []);
+            if (items.some(i => i.product_id === pid) && o.status === 'delivered') { isVerified = true; break; }
+          }
+        } catch (e) {}
+      }
+
+      // Review metrics
+      if (all.length) {
+        const avg = all.reduce((a, r) => a + r.rating, 0) / all.length;
+        const ds = document.getElementById('det-stars'), dc = document.getElementById('det-count');
+        if (ds) ds.textContent = '⭐'.repeat(Math.round(avg));
+        if (dc) dc.textContent = `${avg.toFixed(1)} (${all.length} reviews)`;
+      }
+      const avg = all.length ? all.reduce((a, r) => a + r.rating, 0) / all.length : 0;
+      const counts = [5,4,3,2,1].map(n => ({ n, c: all.filter(r => r.rating === n).length }));
+
+      // Gather images for top gallery
+      const reviewsWithImages = all.filter(r => r.image_url);
+      let galleryHtml = '';
+      if (reviewsWithImages.length > 0) {
+        galleryHtml = `
+          <div class="rev-gallery-wrap">
+            <div class="rev-gallery-title">📸 Customer Photos</div>
+            <div class="rev-gallery">
+              ${reviewsWithImages.map(r => `<img class="rg-img" src="${r.image_url}" onclick="openImgModal(this.src)" loading="lazy">`).join('')}
+            </div>
+          </div>
+        `;
+      }
+
+      // Determine Image Upload form chunk
+      let imageUploadHtml = '';
+      if (isVerified) {
+        imageUploadHtml = `
+          <div class="file-upload-box" onclick="document.getElementById('rv-image').click()">
+            <label class="file-upload-lbl">
+              <span>📸</span> Add a Photo (Optional)
+            </label>
+            <input type="file" id="rv-image" accept="image/png, image/jpeg, image/jpg" onchange="previewRevImage(this)">
+            <div class="file-preview-wrap" id="file-preview-wrap">
+               <img id="rv-image-preview" class="file-preview-img">
+               <button type="button" class="file-remove-btn" onclick="clearRevImage(event)">✕</button>
+            </div>
+          </div>
+        `;
+      } else {
+        imageUploadHtml = `
+          <div style="font-size:0.8rem;color:var(--mid);margin-bottom:14px;background:var(--light);padding:10px;border-radius:6px;line-height:1.5;">
+            ℹ️ Only <b>Verified Purchasers</b> can attach photos to their review. We do this to ensure authenticity.
+          </div>
+        `;
+      }
+
+      wrap.innerHTML = `
+        <div class="rev-summary-bar">
+          <div class="rev-big-score">
+            <div class="rev-big-num">${avg.toFixed(1)}</div>
+            <div class="rev-big-stars">${'★'.repeat(Math.round(avg))}${'☆'.repeat(5 - Math.round(avg))}</div>
+            <div class="rev-big-count">${all.length} reviews</div>
+          </div>
+          <div class="rev-bars">
+            ${counts.map(({ n, c }) => {
+              const pct = all.length ? Math.round(c / all.length * 100) : 0;
+              return `<div class="rev-bar-row"><span>${n}⭐</span><div class="rev-bar-track"><div class="rev-bar-fill" style="width:${pct}%"></div></div><span>${c}</span></div>`;
+            }).join('')}
+          </div>
+        </div>
+
+        ${galleryHtml}
+
+        <div class="rev-list">
+          ${all.map((r, i) => `
+            <div class="rev-card" style="animation-delay:${i * .06}s">
+              <div class="rev-top"><span class="rev-name">${esc(r.name)}</span><span class="rev-stars">${'★'.repeat(r.rating || 5)}</span></div>
+              <div class="rev-date">${r.created_at ? fmtDate(r.created_at) : 'Just now'}</div>
+              <div class="rev-text">${esc(r.text)}</div>
+              ${r.image_url ? `<img src="${r.image_url}" class="rev-card-img" onclick="openImgModal(this.src)" loading="lazy">` : ''}
+              ${r.verified ? '<div class="rev-verified">✅ Verified Purchase</div>' : ''}
+            </div>`).join('')}
+        </div>
+
+        <div class="write-review-box">
+          <h4>✍️ Write a Review</h4>
+          ${!isVerified ? `<p style="font-size:0.8rem;color:var(--mid);margin-bottom:14px;background:var(--light);padding:10px;border-radius:6px;">ℹ️ Anyone can write a text review. Only orders marked as "Delivered" get the <b>Verified Purchase</b> badge.</p>` : ''}
+          <div class="form-group"><label>Your Name *</label><input id="rv-name" type="text" placeholder="Your name"></div>
+          <div class="form-group">
+            <label>Rating *</label>
+            <div class="star-picker" id="star-picker">${[1,2,3,4,5].map(n => `<button type="button" class="star-btn lit" data-val="${n}" onclick="pickStar(${n})">★</button>`).join('')}</div>
+            <div class="star-label" id="star-label">Excellent</div>
+          </div>
+          <div class="form-group"><label>Your Review *</label><textarea id="rv-text" rows="4" placeholder="Share your experience…"></textarea></div>
+          
+          ${imageUploadHtml}
+
+          <button class="rev-submit-btn" id="rv-btn" onclick="submitReview(${pid},${isVerified})">Submit Review ✨</button>
+        </div>`;
+    }
+
+    function pickStar(val) {
+      pickedRating = val;
+      const labels = ['', 'Terrible', 'Poor', 'Average', 'Good', 'Excellent'];
+      document.querySelectorAll('#star-picker .star-btn').forEach(b => b.classList.toggle('lit', +b.dataset.val <= val));
+      const l = document.getElementById('star-label'); if (l) l.textContent = labels[val];
+    }
+
+    /* ── IMAGE UPLOAD HANDLING ── */
+    function previewRevImage(input) {
+      const file = input.files[0];
+      if (file) {
+        if (!file.type.startsWith('image/')) {
+           showToast('⚠️ Please select an image file');
+           input.value = ""; return;
+        }
+        const reader = new FileReader();
+        reader.onload = (e) => {
+          document.getElementById('rv-image-preview').src = e.target.result;
+          document.getElementById('file-preview-wrap').style.display = 'block';
+        };
+        reader.readAsDataURL(file);
+      }
+    }
+    
+    function clearRevImage(e) {
+      e.stopPropagation();
+      document.getElementById('rv-image').value = "";
+      document.getElementById('file-preview-wrap').style.display = 'none';
+      document.getElementById('rv-image-preview').src = "";
+    }
+
+    // Advanced client-side compression to avoid Supabase storage setup headaches and huge Database payloads
+    function compressImage(file, maxSize = 800) {
+      return new Promise((resolve, reject) => {
+        const reader = new FileReader();
+        reader.onload = (e) => {
+          const img = new Image();
+          img.onload = () => {
+            const canvas = document.createElement('canvas');
+            let w = img.width, h = img.height;
+            if (w > maxSize || h > maxSize) {
+              if (w > h) { h = Math.round((h * maxSize) / w); w = maxSize; }
+              else { w = Math.round((w * maxSize) / h); h = maxSize; }
+            }
+            canvas.width = w; canvas.height = h;
+            const ctx = canvas.getContext('2d');
+            ctx.drawImage(img, 0, 0, w, h);
+            // Returns a heavily compressed JPEG format (~30-80KB) ideal for database text columns
+            resolve(canvas.toDataURL('image/jpeg', 0.6));
+          };
+          img.onerror = reject;
+          img.src = e.target.result;
+        };
+        reader.onerror = reject;
+        reader.readAsDataURL(file);
+      });
+    }
+
+    async function submitReview(pid, isVerified) {
+      const name = (document.getElementById('rv-name')?.value || '').trim();
+      const text = (document.getElementById('rv-text')?.value || '').trim();
+      const btn  = document.getElementById('rv-btn');
+      
+      if (!name) { showToast('⚠️ Please enter your name'); return; }
+      if (!text) { showToast('⚠️ Please write your review'); return; }
+      
+      if (btn) { btn.disabled = true; btn.textContent = 'Processing...'; }
+
+      let base64ImageString = null;
+
+      // Handle file compression if verified
+      if (isVerified) {
+        const fileInput = document.getElementById('rv-image');
+        if (fileInput && fileInput.files.length > 0) {
+           try {
+             base64ImageString = await compressImage(fileInput.files[0]);
+           } catch(e) {
+             console.error("Image processing error", e);
+             showToast('⚠️ Image process failed. Trying without image.');
+           }
+        }
+      }
+
+      try {
+        await sb('reviews', 'POST', { 
+          product_id: pid, 
+          name: name, 
+          rating: pickedRating, 
+          text: text, 
+          verified: isVerified,
+          image_url: base64ImageString // Must be added to database schema
+        });
+        showToast('✅ Review posted!'); 
+        pickedRating = 5; 
+        await loadReviews(pid);
+      } catch (e) {
+        showToast('⚠️ Could not save review. (Check SQL columns)');
+        if (btn) { btn.disabled = false; btn.textContent = 'Submit Review ✨'; }
+      }
+    }
+
+    // ── CART ──
+    function saveCart() { store.set('kasu_cart', cart); }
+
+function addToCart(pid) {
+  const p = products.find(x => x.id === pid); if (!p) return;
+  const isCustom = (p.custom === true || String(p.custom).toLowerCase() === 'true');
+  
+  if (isCustom && tempCustomImages.length !== 6) {
+    showToast('⚠️ Please upload exactly 6 photos for this custom product.');
+    return;
+  }
+
+  fireCartAdded();
+  const variant    = getActiveVariant(p);
+  const price      = variant ? variant.price : p.price;
+  const variantKey = variant ? `${pid}_${variant.label}` : `${pid}`;
+
+  const ex = cart.find(c => String(c.cart_key) === String(variantKey));
+  if (ex) {
+    ex.qty++;
+    if (isCustom) ex.custom_images = [...tempCustomImages]; 
+  } else {
+    cart.push({
+      cart_key:    variantKey,
+      product_id:  p.id,
+      name:        p.name,
+      price:       price,
+      emoji:       p.emoji || '🎁',
+      image_url:   p.image_url || '',
+      qty:         1,
+      variant:     variant ? variant.label : null,
+      custom_images: isCustom ? [...tempCustomImages] : null
+    });
+  }
+  
+  tempCustomImages = []; // Clear memory
+  if (document.getElementById('custom-img-grid')) document.getElementById('custom-img-grid').innerHTML = '';
+  if (document.getElementById('custom-file-input')) document.getElementById('custom-file-input').value = '';
+
+  saveCart(); updateBadge(); openCart();
+}
+    function incCart(cartKey) {
+      const item = cart.find(c => String(c.cart_key) === String(cartKey)); if (!item) return;
+      item.qty++; saveCart(); updateBadge(); renderCart();
+    }
+    function decCart(cartKey) {
+      const item = cart.find(c => String(c.cart_key) === String(cartKey)); if (!item) return;
+      item.qty--;
+      if (item.qty <= 0) cart = cart.filter(c => String(c.cart_key) !== String(cartKey));
+      saveCart(); updateBadge(); renderCart();
+    }
+    function updateBadge() { document.getElementById('cart-count').textContent = cart.reduce((a, c) => a + c.qty, 0); }
+
+ function buyNow(pid) {
+  const p = products.find(x => x.id === pid); if (!p) return;
+  const isCustom = (p.custom === true || String(p.custom).toLowerCase() === 'true');
+
+  if (isCustom && tempCustomImages.length !== 6) {
+    showToast('⚠️ Please upload exactly 6 photos for this custom product.');
+    return;
+  }
+
+  const variant = getActiveVariant(p);
+  const price   = variant ? variant.price : p.price;
+  buyNowItem = {
+    cart_key:   variant ? `${pid}_${variant.label}` : `${pid}`,
+    product_id: p.id,
+    name:       p.name,
+    price:      price,
+    emoji:      p.emoji || '🎁',
+    image_url:  p.image_url || '',
+    qty:        1,
+    variant:    variant ? variant.label : null,
+    custom_images: isCustom ? [...tempCustomImages] : null
+  };
+
+  tempCustomImages = []; // Clear memory
+
+  closeAll();
+  checkoutStep = 1;
+  appliedCoupon = null; 
+  renderCheckout();
+  openPanel('checkout-panel');
+}
+
+    function openCart() { closeAll(); renderCart(); openPanel('cart-panel'); }
+
+    function renderCart() {
+      const body = document.getElementById('cart-body'), foot = document.getElementById('cart-foot');
+      if (!cart.length) {
+        body.innerHTML = `<div class="cart-empty"><div class="ce-ico">🛒</div><p style="font-weight:800;margin-bottom:6px;">Your cart is empty</p><p style="color:var(--mid);font-size:0.9rem;">Add some gifts to get started!</p></div>`;
+        foot.style.display = 'none'; return;
+      }
+      const total = cart.reduce((a, c) => a + c.price * c.qty, 0);
+      body.innerHTML = cart.map(item => `
+        <div class="cart-item">
+          <div class="ci-img">${item.image_url ? `<img src="${item.image_url}" onerror="this.parentElement.textContent='${item.emoji}'">` : item.emoji}</div>
+          <div class="ci-info">
+            <div class="ci-name">${item.name}</div>
+            ${item.variant ? `<div class="ci-variant">Variant: ${esc(item.variant)}</div>` : ''}
+            ${item.custom_images ? `<div style="font-size:0.75rem;color:var(--green);font-weight:700;margin-bottom:4px;">📸 6 Custom Photos Attached</div>` : ''}
+            <div class="ci-price">₹${(item.price * item.qty).toLocaleString('en-IN')}</div>
+          </div>
+          <div class="ci-qty-ctrl">
+            <button class="qty-btn minus" onclick="decCart('${String(item.cart_key).replace(/'/g, "\\'")}')">−</button>
+            <span class="qty-num">${item.qty}</span>
+            <button class="qty-btn" onclick="incCart('${String(item.cart_key).replace(/'/g, "\\'")}')">+</button>
+          </div>
+        </div>`).join('');
+      document.getElementById('cart-total-val').textContent = `₹${total.toLocaleString('en-IN')}`;
+      foot.style.display = 'block';
+    }
+
+    // ── CHECKOUT AND COUPON LOGIC ──
+    function openCheckout() {
+      buyNowItem = null;
+      if (!cart.length) { showToast('Your cart is empty!'); return; }
+      closeAll(); 
+      checkoutStep = 1; 
+      selectedPayment = 'cod'; 
+      appliedCoupon = null; 
+      renderCheckout(); 
+      openPanel('checkout-panel');
+    }
+
+       function applyCoupon(code) {
+      code = code.toUpperCase().trim();
+      const found = availableCoupons.find(c => c.code.toUpperCase() === code);
+      
+      if (!found) { 
+        // If it's not a standard admin coupon, treat it as an affiliate code!
+        sessionStorage.setItem('kasu_affiliate_ref', code);
+        appliedCoupon = null; // Clear standard coupon
+        showToast('✅ Referral Code Applied! ₹50 OFF'); 
+        renderCheckout();
+        return; 
+      }
+
+      const items = buyNowItem ? [buyNowItem] : cart;
+      const subtotal = items.reduce((a, c) => a + c.price * c.qty, 0);
+
+      if (found.min_order && subtotal < found.min_order) {
+        showToast(`⚠️ Minimum order amount for this coupon is ₹${found.min_order}`);
+        return;
+      }
+      if (found.max_uses && found.used_count >= found.max_uses) {
+        showToast('⚠️ This coupon has reached its usage limit');
+        return;
+      }
+
+      // If applying a standard coupon, remove the affiliate referral so they don't stack
+      sessionStorage.removeItem('kasu_affiliate_ref');
+      appliedCoupon = found;
+      showToast('✅ Coupon Applied!');
+      renderCheckout(); 
+    }
+
+    function applyCouponManually() {
+      const val = document.getElementById('coupon-input').value;
+      if (!val) return;
+      applyCoupon(val);
+    }
+
+    function removeCoupon() {
+      appliedCoupon = null;
+      showToast('Coupon removed');
+      renderCheckout();
+    }
+
+
+    function selectPayment(method) { 
+  // No longer needed since we only have COD, but kept for compatibility
+}
+    function validateAddr() {
+      const rules = [
+        ['f-name',   'e-name',   v => v.trim().length >= 2],
+        ['f-mobile', 'e-mobile', v => /^\d{10}$/.test(v.trim())],
+        ['f-pin',    'e-pin',    v => /^\d{6}$/.test(v.trim())],
+        ['f-addr',   'e-addr',   v => v.trim().length >= 5],
+        ['f-city',   'e-city',   v => v.trim().length >= 2],
+        ['f-state',  'e-state',  v => v.length > 0]
+      ];
+      let ok = true;
+      rules.forEach(([id, eid, fn]) => {
+        const el = document.getElementById(id), em = document.getElementById(eid);
+        fn(el.value) ? (el.classList.remove('err'), em.classList.remove('show')) : (el.classList.add('err'), em.classList.add('show'), ok = false);
+      });
+      if (!ok) return;
+      const g = id => document.getElementById(id).value.trim();
+      checkoutAddress = { name: g('f-name'), mobile: g('f-mobile'), pin: g('f-pin'), addr: g('f-addr'), city: g('f-city'), state: document.getElementById('f-state').value };
+      checkoutStep = 2; renderCheckout();
+    }
+
+    async function placeOrder() {
+  const a = checkoutAddress;
+  const items = buyNowItem ? [buyNowItem] : cart;
+  
+  const subtotal = items.reduce((s, c) => s + c.price * c.qty, 0);
+  const totalQty = items.reduce((acc, c) => acc + c.qty, 0);
+  
+  let couponDiscount = 0;
+  let affiliateRef = sessionStorage.getItem('kasu_affiliate_ref');
+
+  // CORRECTED DISCOUNT MATH FOR ORDER SUBMISSION
+  if (appliedCoupon) {
+    couponDiscount = appliedCoupon.discount_type === 'percent' 
+      ? Math.round(subtotal * (appliedCoupon.discount_value / 100)) 
+      : appliedCoupon.discount_value;
+  } else if (affiliateRef) {
+    couponDiscount = 50; // Flat ₹50 for affiliate links
+  }
+  
+  if (couponDiscount > subtotal) couponDiscount = subtotal;
+  let finalTotal = subtotal - couponDiscount;
+  if (finalTotal < 0) finalTotal = 0;
+
+  const finalItemsRecord = items.map(c => ({
+    product_id: c.product_id,
+    name: c.name,
+    price: c.price,
+    qty: c.qty,
+    variant: c.variant || null,
+    custom_images: c.custom_images || null 
+  }));
+
+  const orderId = 'KASU-' + Date.now().toString(36).toUpperCase();
+  const body = document.getElementById('checkout-body');
+  body.innerHTML = '<div class="load-txt"><div class="loader"></div><p>Placing your order…</p></div>';
+
+  let userIP = 'Unknown';
+  try { 
+    const ipRes = await fetch('https://api.ipify.org?format=json'); 
+    const ipData = await ipRes.json(); 
+    if (ipData.ip) userIP = ipData.ip; 
+  } catch (e) {}
+
+  let commission = 0;
+  if (affiliateRef && !appliedCoupon) {
+     commission = Math.round(finalTotal * 0.20);
+  }
+
+  // Base payload that we know works with your database
+  const orderPayload = {
+      order_id: orderId,
+      customer_name: a.name,
+      mobile: a.mobile,
+      address: `${a.addr}, ${a.city}, ${a.state} - ${a.pin}`,
+      items: JSON.stringify(finalItemsRecord),
+      total: finalTotal,
+      coupon_code: appliedCoupon ? appliedCoupon.code : (affiliateRef || null),
+      discount_amount: couponDiscount,
+      payment_method: 'cod',
+      status: 'processing',
+      ip_address: userIP
+  };
+
+  try {
+    // Attempt 1: Try saving WITH affiliate columns (Make sure you add these to Supabase!)
+    try {
+      await sb('orders', 'POST', {
+        ...orderPayload,
+        affiliate_code: affiliateRef || null,
+        affiliate_commission: commission
+      });
+    } catch (dbError) {
+      console.warn("Affiliate columns missing in DB, falling back to standard order save.");
+      // Attempt 2: Fallback to standard order format if you forgot to update Supabase schema
+      await sb('orders', 'POST', orderPayload);
+    }
+  } catch (e) { 
+    console.error('Order save failed:', e.message);
+    showToast('⚠️ Order failed. Please try again.');
+    checkoutStep = 2; // Let them retry
+    renderCheckout();
+    return;
+  }
+
+  if (typeof fbq === 'function') {
+    fbq('track', 'Purchase', {
+      value: finalTotal, 
+      currency: 'INR',
+      content_ids: items.map(c => String(c.product_id)),
+      content_type: 'product',
+      contents: items.map(c => ({ id: String(c.product_id), quantity: c.qty, item_price: c.price })),
+      num_items: totalQty,
+      order_id: orderId
+    });
+  }
+
+  orderIds.push(orderId);
+  store.set('kasu_orders', orderIds);
+  if (!buyNowItem) { 
+    cart = []; 
+    saveCart(); 
+    updateBadge(); 
+  }
+  
+  buyNowItem = null;
+  appliedCoupon = null;
+
+  body.innerHTML = `
+    <div class="success-wrap">
+      <div class="success-ico">✅</div>
+      <div class="success-title">Order Placed Successfully!</div>
+      <div class="success-sub">Thank you, ${a.name}! Your order has been confirmed.</div>
+      <div class="order-id-box"><div class="oid-lbl">Order ID</div><div class="oid-val">${orderId}</div></div>
+      <div class="addr-box"><div class="addr-name">${a.name} · ${a.mobile}</div><div class="addr-detail">${a.addr}, ${a.city}, ${a.state} – ${a.pin}</div></div>
+      <div class="cod-box"><span class="cod-lbl">Amount to Pay on Delivery</span><span class="cod-amt">₹${finalTotal.toLocaleString('en-IN')}</span></div>
+      <button class="btn-primary" onclick="closeAll();showPage('home')">Continue Shopping 🛍️</button>
+      <button class="btn-secondary" style="margin-top:12px;" onclick="closeAll();openTrack()">Track Order 📦</button>
+    </div>`;
+}
+    // ── TRACK ──
+    function buildTrackCard(o) {
+      const cur = STATUSES.indexOf((o.status || 'processing').toLowerCase());
+      const steps = STATUSES.map((st, i) => {
+        const done = i <= cur, active = i === cur, last = i === STATUSES.length - 1;
+        return `<div class="ts-row"><div class="ts-left"><div class="ts-dot ${done ? (active ? 'active' : 'done') : ''}">${done ? STATUS_INFO[st].icon : i + 1}</div>${!last ? `<div class="ts-line ${done && !active ? 'done' : ''}"></div>` : ''}</div><div class="ts-right"><div class="ts-title" style="color:${done ? 'var(--dark)' : '#ccc'}">${STATUS_INFO[st].label}</div></div></div>`;
+      }).join('');
+      return `<div class="order-track-card">
+        <div class="otc-top">
+          <div><div class="otc-id-lbl">Order ID</div><div class="otc-id">${esc(o.order_id)}</div><div class="otc-date">${fmtDate(o.created_at)}</div></div>
+          <div style="text-align:right"><div class="otc-amt">₹${parseFloat(o.total).toLocaleString('en-IN')}</div><div class="otc-method">${o.payment_method === 'upi' ? '📲 UPI' : '💵 COD'}</div></div>
+        </div>
+        <div class="track-steps">${steps}</div>
+      </div>`;
+    }
+
+    async function searchOrder() {
+      const input  = document.getElementById('track-search-input');
+      const btn    = document.getElementById('track-search-btn');
+      const result = document.getElementById('track-search-result');
+      const phone  = (input?.value || '').replace(/\D/g, '').trim();
+      if (!phone) { showToast('⚠️ Please enter your mobile number'); return; }
+      if (!/^\d{10}$/.test(phone)) { showToast('⚠️ Enter a valid 10-digit number'); return; }
+      btn.disabled = true; btn.textContent = 'Searching…';
+      result.innerHTML = '<div class="load-txt"><div class="loader"></div></div>';
+      try {
+        const rows = await sb(`orders?mobile=eq.${phone}&order=created_at.desc&select=*`);
+        if (rows.length) {
+          result.innerHTML = `<div class="track-found-badge">✅ ${rows.length} order${rows.length > 1 ? 's' : ''} found for ${phone}</div>${rows.map(o => buildTrackCard(o)).join('')}`;
+        } else {
+          result.innerHTML = `<div class="track-not-found"><div class="tnf-ico">🔍</div><p>No orders found for <strong>${esc(phone)}</strong></p><p>Make sure you're using the same number you entered at checkout.</p></div>`;
+        }
+      } catch (e) {
+        result.innerHTML = `<div class="track-not-found"><div class="tnf-ico">⚠️</div><p>Could not search right now. Check your connection and try again.</p></div>`;
+      } finally { btn.disabled = false; btn.textContent = 'Track →'; }
+    }
+
+    async function openTrack() {
+      closeAll(); openPanel('track-panel');
+      const input   = document.getElementById('track-search-input');
+      const result  = document.getElementById('track-search-result');
+      const divider = document.getElementById('track-divider');
+      if (input)  input.value  = '';
+      if (result) result.innerHTML = '';
+      const list = document.getElementById('orders-list');
+      if (!orderIds.length) {
+        if (divider) divider.style.display = 'none';
+        list.innerHTML = '<div class="no-data"><div class="no-data-ico">📦</div><p style="font-weight:700;margin-bottom:6px;">No orders on this device</p><p style="font-size:0.85rem;">Enter your phone number above to track any order.</p></div>';
+        return;
+      }
+      if (divider) divider.style.display = 'flex';
+      list.innerHTML = '<div class="load-txt"><div class="loader"></div></div>';
+      try {
+        const ids    = orderIds.map(id => `order_id.eq.${id}`).join(',');
+        const orders = await sb(`orders?or=(${ids})&order=created_at.desc`);
+        list.innerHTML = orders.length ? orders.map(o => buildTrackCard(o)).join('') : '<div class="no-data"><div class="no-data-ico">📦</div><p>No orders found.</p></div>';
+      } catch (e) { list.innerHTML = '<div class="load-txt">⚠️ Could not load orders.</div>'; }
+    }
+function getPersistentCountdown() {
+  const FIVE_HOURS_MS = 5 * 60 * 60 * 1000; // 5 hours in milliseconds
+  let target = localStorage.getItem('kasu_timer_target');
+  
+  // If no timer exists in storage or it has already expired, set a new 5-hour timer
+  if (!target || Date.now() > parseInt(target, 10)) {
+    target = Date.now() + FIVE_HOURS_MS;
+    localStorage.setItem('kasu_timer_target', target);
+  }
+  return parseInt(target, 10);
+}
+    // ── TIMER ──
+       function startTimer() { clearInterval(timerInterval); timerInterval = setInterval(tickTimer, 1000); tickTimer(); }
+    
+    function tickTimer() {
+      const el = document.getElementById('main-timer'); if (!el) return;
+      
+      let d = Math.floor((countdownTarget - Date.now()) / 1000); 
+      
+      // Auto-reset to a new 5 hours if the countdown hits 0
+      if (d < 0) {
+        countdownTarget = getPersistentCountdown();
+        d = Math.floor((countdownTarget - Date.now()) / 1000);
+      }
+      
+      const h = Math.floor(d / 3600), m = Math.floor((d % 3600) / 60), s = d % 60;
+      el.innerHTML = `<div class="tblock"><div class="tnum">${pad(h)}</div><div class="tlbl">HRS</div></div><span class="tsep">:</span><div class="tblock"><div class="tnum">${pad(m)}</div><div class="tlbl">MINS</div></div><span class="tsep">:</span><div class="tblock"><div class="tnum">${pad(s)}</div><div class="tlbl">SECS</div></div>`;
+    }
+
+    // ── UTILS ──
+    function pad(n) { return String(n).padStart(2, '0'); }
+    function esc(s) { return String(s).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;').replace(/'/g,'&#39;'); }
+    function fmtDate(iso) { return new Date(iso).toLocaleDateString('en-IN', { day: 'numeric', month: 'short', year: 'numeric' }); }
+    function openPanel(id) { document.getElementById(id).classList.add('open'); document.getElementById('overlay').classList.add('show'); }
+    function showPage(name) { closeAll(); document.querySelectorAll('.page').forEach(p => p.classList.remove('active')); document.getElementById('page-' + name).classList.add('active'); window.scrollTo({ top: 0, behavior: 'smooth' }); }
+    function closeAll() { document.querySelectorAll('.panel').forEach(p => p.classList.remove('open')); document.getElementById('overlay').classList.remove('show'); }
+    function showToast(msg) { const t = document.getElementById('toast'); t.textContent = msg; t.classList.add('show'); setTimeout(() => t.classList.remove('show'), 3000); }
+
+    init();
+  </script>
+</body>
+</html>
