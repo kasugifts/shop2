@@ -233,7 +233,6 @@
     .img-modal-close { position: absolute; top: 24px; right: 24px; background: rgba(255,255,255,0.2); color: white; width: 44px; height: 44px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 1.2rem; border: none; cursor: pointer; transition: 0.2s; z-index: 2010; }
     .img-modal-close:hover { background: var(--coral); }
 
-    /* ... [Rest of your UI Panels styling] ... */
     .overlay { position: fixed; inset: 0; background: rgba(0,0,0,0.5); z-index: 1000; display: none; backdrop-filter: blur(3px); }
     .overlay.show { display: block; animation: fadeIn 0.3s; }
     .panel { position: fixed; top: 0; right: -110%; width: min(480px, 100%); height: 100%; background: white; z-index: 1100; transition: right 0.4s cubic-bezier(0.16,1,0.3,1); display: flex; flex-direction: column; overflow: hidden; }
@@ -588,26 +587,18 @@ async function processCustomImages(input) {
     };
 
     async function init() {
-  updateBadge();
-  initSession();
+      updateBadge();
+      initSession();
 
-  await Promise.all([
-    loadProducts(),
-    loadCoupons()
-  ]);
+      await Promise.all([
+        loadProducts(),
+        loadCoupons()
+      ]);
 
-  const params = new URLSearchParams(window.location.search);
-  
-  // Track Affiliate Referral Link
-  const refCode = params.get('ref');
-  if (refCode) {
-    sessionStorage.setItem('kasu_affiliate_ref', refCode.toUpperCase());
-    showToast('🎉 ₹50 Referral Discount unlocked!');
-  }
-
-  const pid = params.get('product');
-  if (pid) openProduct(parseInt(pid));
-}
+      const params = new URLSearchParams(window.location.search);
+      const pid = params.get('product');
+      if (pid) openProduct(parseInt(pid));
+    }
 
     // ── SESSION ──
     async function initSession() {
@@ -1008,7 +999,6 @@ async function processCustomImages(input) {
 
   let couponDiscount = 0;
   let discountRowsHtml = ``;
-  let affiliateRef = sessionStorage.getItem('kasu_affiliate_ref');
 
   // If a standard coupon is applied
   if (appliedCoupon) {
@@ -1021,16 +1011,6 @@ async function processCustomImages(input) {
     
     discountRowsHtml += `<div class="os-row" style="color:var(--green);">
       <span>Discount (${appliedCoupon.code}) <button onclick="removeCoupon()" style="background:none;border:none;color:var(--coral);font-weight:800;font-size:0.75rem;cursor:pointer;">[Remove]</button></span>
-      <span>-₹${couponDiscount.toLocaleString('en-IN')}</span>
-    </div>`;
-  } 
-  // If NO standard coupon is applied, but they have an affiliate referral link active
-  else if (affiliateRef) {
-    couponDiscount = 50; // Flat 50 RS Discount for Affiliates
-    if (couponDiscount > subtotal) couponDiscount = subtotal;
-
-    discountRowsHtml += `<div class="os-row" style="color:var(--green);">
-      <span>Referral Discount (${affiliateRef})</span>
       <span>-₹${couponDiscount.toLocaleString('en-IN')}</span>
     </div>`;
   }
@@ -1348,44 +1328,6 @@ async function processCustomImages(input) {
     // ── CART ──
     function saveCart() { store.set('kasu_cart', cart); }
 
-function addToCart(pid) {
-  const p = products.find(x => x.id === pid); if (!p) return;
-  const isCustom = (p.custom === true || String(p.custom).toLowerCase() === 'true');
-  
-  if (isCustom && tempCustomImages.length !== 6) {
-    showToast('⚠️ Please upload exactly 6 photos for this custom product.');
-    return;
-  }
-
-  fireCartAdded();
-  const variant    = getActiveVariant(p);
-  const price      = variant ? variant.price : p.price;
-  const variantKey = variant ? `${pid}_${variant.label}` : `${pid}`;
-
-  const ex = cart.find(c => String(c.cart_key) === String(variantKey));
-  if (ex) {
-    ex.qty++;
-    if (isCustom) ex.custom_images = [...tempCustomImages]; 
-  } else {
-    cart.push({
-      cart_key:    variantKey,
-      product_id:  p.id,
-      name:        p.name,
-      price:       price,
-      emoji:       p.emoji || '🎁',
-      image_url:   p.image_url || '',
-      qty:         1,
-      variant:     variant ? variant.label : null,
-      custom_images: isCustom ? [...tempCustomImages] : null
-    });
-  }
-  
-  tempCustomImages = []; // Clear memory
-  if (document.getElementById('custom-img-grid')) document.getElementById('custom-img-grid').innerHTML = '';
-  if (document.getElementById('custom-file-input')) document.getElementById('custom-file-input').value = '';
-
-  saveCart(); updateBadge(); openCart();
-}
     function incCart(cartKey) {
       const item = cart.find(c => String(c.cart_key) === String(cartKey)); if (!item) return;
       item.qty++; saveCart(); updateBadge(); renderCart();
@@ -1397,66 +1339,6 @@ function addToCart(pid) {
       saveCart(); updateBadge(); renderCart();
     }
     function updateBadge() { document.getElementById('cart-count').textContent = cart.reduce((a, c) => a + c.qty, 0); }
-
- function buyNow(pid) {
-  const p = products.find(x => x.id === pid); if (!p) return;
-  const isCustom = (p.custom === true || String(p.custom).toLowerCase() === 'true');
-
-  if (isCustom && tempCustomImages.length !== 6) {
-    showToast('⚠️ Please upload exactly 6 photos for this custom product.');
-    return;
-  }
-
-  const variant = getActiveVariant(p);
-  const price   = variant ? variant.price : p.price;
-  buyNowItem = {
-    cart_key:   variant ? `${pid}_${variant.label}` : `${pid}`,
-    product_id: p.id,
-    name:       p.name,
-    price:      price,
-    emoji:      p.emoji || '🎁',
-    image_url:  p.image_url || '',
-    qty:        1,
-    variant:    variant ? variant.label : null,
-    custom_images: isCustom ? [...tempCustomImages] : null
-  };
-
-  tempCustomImages = []; // Clear memory
-
-  closeAll();
-  checkoutStep = 1;
-  appliedCoupon = null; 
-  renderCheckout();
-  openPanel('checkout-panel');
-}
-
-    function openCart() { closeAll(); renderCart(); openPanel('cart-panel'); }
-
-    function renderCart() {
-      const body = document.getElementById('cart-body'), foot = document.getElementById('cart-foot');
-      if (!cart.length) {
-        body.innerHTML = `<div class="cart-empty"><div class="ce-ico">🛒</div><p style="font-weight:800;margin-bottom:6px;">Your cart is empty</p><p style="color:var(--mid);font-size:0.9rem;">Add some gifts to get started!</p></div>`;
-        foot.style.display = 'none'; return;
-      }
-      const total = cart.reduce((a, c) => a + c.price * c.qty, 0);
-      body.innerHTML = cart.map(item => `
-        <div class="cart-item">
-          <div class="ci-img">${item.image_url ? `<img src="${item.image_url}" onerror="this.parentElement.textContent='${item.emoji}'">` : item.emoji}</div>
-          <div class="ci-info">
-            <div class="ci-name">${item.name}</div>
-            ${item.variant ? `<div class="ci-variant">Variant: ${esc(item.variant)}</div>` : ''}
-            ${item.custom_images ? `<div style="font-size:0.75rem;color:var(--green);font-weight:700;margin-bottom:4px;">📸 6 Custom Photos Attached</div>` : ''}
-            <div class="ci-price">₹${(item.price * item.qty).toLocaleString('en-IN')}</div>
-          </div>
-          <div class="ci-qty-ctrl">
-            <button class="qty-btn minus" onclick="decCart('${String(item.cart_key).replace(/'/g, "\\'")}')">−</button>
-            <span class="qty-num">${item.qty}</span>
-            <button class="qty-btn" onclick="incCart('${String(item.cart_key).replace(/'/g, "\\'")}')">+</button>
-          </div>
-        </div>`).join('');
-      document.getElementById('cart-total-val').textContent = `₹${total.toLocaleString('en-IN')}`;
-      foot.style.display = 'block';
-    }
 
     // ── CHECKOUT AND COUPON LOGIC ──
     function openCheckout() {
@@ -1470,16 +1352,12 @@ function addToCart(pid) {
       openPanel('checkout-panel');
     }
 
-       function applyCoupon(code) {
+    function applyCoupon(code) {
       code = code.toUpperCase().trim();
       const found = availableCoupons.find(c => c.code.toUpperCase() === code);
       
       if (!found) { 
-        // If it's not a standard admin coupon, treat it as an affiliate code!
-        sessionStorage.setItem('kasu_affiliate_ref', code);
-        appliedCoupon = null; // Clear standard coupon
-        showToast('✅ Referral Code Applied! ₹50 OFF'); 
-        renderCheckout();
+        showToast('⚠️ Invalid Coupon Code'); 
         return; 
       }
 
@@ -1495,8 +1373,6 @@ function addToCart(pid) {
         return;
       }
 
-      // If applying a standard coupon, remove the affiliate referral so they don't stack
-      sessionStorage.removeItem('kasu_affiliate_ref');
       appliedCoupon = found;
       showToast('✅ Coupon Applied!');
       renderCheckout(); 
@@ -1514,10 +1390,10 @@ function addToCart(pid) {
       renderCheckout();
     }
 
-
     function selectPayment(method) { 
-  // No longer needed since we only have COD, but kept for compatibility
-}
+      // No longer needed since we only have COD, but kept for compatibility
+    }
+
     function validateAddr() {
       const rules = [
         ['f-name',   'e-name',   v => v.trim().length >= 2],
@@ -1539,124 +1415,106 @@ function addToCart(pid) {
     }
 
     async function placeOrder() {
-  const a = checkoutAddress;
-  const items = buyNowItem ? [buyNowItem] : cart;
-  
-  const subtotal = items.reduce((s, c) => s + c.price * c.qty, 0);
-  const totalQty = items.reduce((acc, c) => acc + c.qty, 0);
-  
-  let couponDiscount = 0;
-  let affiliateRef = sessionStorage.getItem('kasu_affiliate_ref');
+      const a = checkoutAddress;
+      const items = buyNowItem ? [buyNowItem] : cart;
+      
+      const subtotal = items.reduce((s, c) => s + c.price * c.qty, 0);
+      const totalQty = items.reduce((acc, c) => acc + c.qty, 0);
+      
+      let couponDiscount = 0;
 
-  // CORRECTED DISCOUNT MATH FOR ORDER SUBMISSION
-  if (appliedCoupon) {
-    couponDiscount = appliedCoupon.discount_type === 'percent' 
-      ? Math.round(subtotal * (appliedCoupon.discount_value / 100)) 
-      : appliedCoupon.discount_value;
-  } else if (affiliateRef) {
-    couponDiscount = 50; // Flat ₹50 for affiliate links
-  }
-  
-  if (couponDiscount > subtotal) couponDiscount = subtotal;
-  let finalTotal = subtotal - couponDiscount;
-  if (finalTotal < 0) finalTotal = 0;
+      // CORRECTED DISCOUNT MATH FOR ORDER SUBMISSION
+      if (appliedCoupon) {
+        couponDiscount = appliedCoupon.discount_type === 'percent' 
+          ? Math.round(subtotal * (appliedCoupon.discount_value / 100)) 
+          : appliedCoupon.discount_value;
+      } 
+      
+      if (couponDiscount > subtotal) couponDiscount = subtotal;
+      let finalTotal = subtotal - couponDiscount;
+      if (finalTotal < 0) finalTotal = 0;
 
-  const finalItemsRecord = items.map(c => ({
-    product_id: c.product_id,
-    name: c.name,
-    price: c.price,
-    qty: c.qty,
-    variant: c.variant || null,
-    custom_images: c.custom_images || null 
-  }));
+      const finalItemsRecord = items.map(c => ({
+        product_id: c.product_id,
+        name: c.name,
+        price: c.price,
+        qty: c.qty,
+        variant: c.variant || null,
+        custom_images: c.custom_images || null 
+      }));
 
-  const orderId = 'KASU-' + Date.now().toString(36).toUpperCase();
-  const body = document.getElementById('checkout-body');
-  body.innerHTML = '<div class="load-txt"><div class="loader"></div><p>Placing your order…</p></div>';
+      const orderId = 'KASU-' + Date.now().toString(36).toUpperCase();
+      const body = document.getElementById('checkout-body');
+      body.innerHTML = '<div class="load-txt"><div class="loader"></div><p>Placing your order…</p></div>';
 
-  let userIP = 'Unknown';
-  try { 
-    const ipRes = await fetch('https://api.ipify.org?format=json'); 
-    const ipData = await ipRes.json(); 
-    if (ipData.ip) userIP = ipData.ip; 
-  } catch (e) {}
+      let userIP = 'Unknown';
+      try { 
+        const ipRes = await fetch('https://api.ipify.org?format=json'); 
+        const ipData = await ipRes.json(); 
+        if (ipData.ip) userIP = ipData.ip; 
+      } catch (e) {}
 
-  let commission = 0;
-  if (affiliateRef && !appliedCoupon) {
-     commission = Math.round(finalTotal * 0.20);
-  }
+      // Base payload that we know works with your database
+      const orderPayload = {
+          order_id: orderId,
+          customer_name: a.name,
+          mobile: a.mobile,
+          address: `${a.addr}, ${a.city}, ${a.state} - ${a.pin}`,
+          items: JSON.stringify(finalItemsRecord),
+          total: finalTotal,
+          coupon_code: appliedCoupon ? appliedCoupon.code : null,
+          discount_amount: couponDiscount,
+          payment_method: 'cod',
+          status: 'processing',
+          ip_address: userIP
+      };
 
-  // Base payload that we know works with your database
-  const orderPayload = {
-      order_id: orderId,
-      customer_name: a.name,
-      mobile: a.mobile,
-      address: `${a.addr}, ${a.city}, ${a.state} - ${a.pin}`,
-      items: JSON.stringify(finalItemsRecord),
-      total: finalTotal,
-      coupon_code: appliedCoupon ? appliedCoupon.code : (affiliateRef || null),
-      discount_amount: couponDiscount,
-      payment_method: 'cod',
-      status: 'processing',
-      ip_address: userIP
-  };
+      try {
+        await sb('orders', 'POST', orderPayload);
+      } catch (e) { 
+        console.error('Order save failed:', e.message);
+        showToast('⚠️ Order failed. Please try again.');
+        checkoutStep = 2; // Let them retry
+        renderCheckout();
+        return;
+      }
 
-  try {
-    // Attempt 1: Try saving WITH affiliate columns (Make sure you add these to Supabase!)
-    try {
-      await sb('orders', 'POST', {
-        ...orderPayload,
-        affiliate_code: affiliateRef || null,
-        affiliate_commission: commission
-      });
-    } catch (dbError) {
-      console.warn("Affiliate columns missing in DB, falling back to standard order save.");
-      // Attempt 2: Fallback to standard order format if you forgot to update Supabase schema
-      await sb('orders', 'POST', orderPayload);
+      if (typeof fbq === 'function') {
+        fbq('track', 'Purchase', {
+          value: finalTotal, 
+          currency: 'INR',
+          content_ids: items.map(c => String(c.product_id)),
+          content_type: 'product',
+          contents: items.map(c => ({ id: String(c.product_id), quantity: c.qty, item_price: c.price })),
+          num_items: totalQty,
+          order_id: orderId
+        });
+      }
+
+      orderIds.push(orderId);
+      store.set('kasu_orders', orderIds);
+      if (!buyNowItem) { 
+        cart = []; 
+        saveCart(); 
+        updateBadge(); 
+      }
+      
+      buyNowItem = null;
+      appliedCoupon = null;
+
+      body.innerHTML = `
+        <div class="success-wrap">
+          <div class="success-ico">✅</div>
+          <div class="success-title">Order Placed Successfully!</div>
+          <div class="success-sub">Thank you, ${a.name}! Your order has been confirmed.</div>
+          <div class="order-id-box"><div class="oid-lbl">Order ID</div><div class="oid-val">${orderId}</div></div>
+          <div class="addr-box"><div class="addr-name">${a.name} · ${a.mobile}</div><div class="addr-detail">${a.addr}, ${a.city}, ${a.state} – ${a.pin}</div></div>
+          <div class="cod-box"><span class="cod-lbl">Amount to Pay on Delivery</span><span class="cod-amt">₹${finalTotal.toLocaleString('en-IN')}</span></div>
+          <button class="btn-primary" onclick="closeAll();showPage('home')">Continue Shopping 🛍️</button>
+          <button class="btn-secondary" style="margin-top:12px;" onclick="closeAll();openTrack()">Track Order 📦</button>
+        </div>`;
     }
-  } catch (e) { 
-    console.error('Order save failed:', e.message);
-    showToast('⚠️ Order failed. Please try again.');
-    checkoutStep = 2; // Let them retry
-    renderCheckout();
-    return;
-  }
-
-  if (typeof fbq === 'function') {
-    fbq('track', 'Purchase', {
-      value: finalTotal, 
-      currency: 'INR',
-      content_ids: items.map(c => String(c.product_id)),
-      content_type: 'product',
-      contents: items.map(c => ({ id: String(c.product_id), quantity: c.qty, item_price: c.price })),
-      num_items: totalQty,
-      order_id: orderId
-    });
-  }
-
-  orderIds.push(orderId);
-  store.set('kasu_orders', orderIds);
-  if (!buyNowItem) { 
-    cart = []; 
-    saveCart(); 
-    updateBadge(); 
-  }
-  
-  buyNowItem = null;
-  appliedCoupon = null;
-
-  body.innerHTML = `
-    <div class="success-wrap">
-      <div class="success-ico">✅</div>
-      <div class="success-title">Order Placed Successfully!</div>
-      <div class="success-sub">Thank you, ${a.name}! Your order has been confirmed.</div>
-      <div class="order-id-box"><div class="oid-lbl">Order ID</div><div class="oid-val">${orderId}</div></div>
-      <div class="addr-box"><div class="addr-name">${a.name} · ${a.mobile}</div><div class="addr-detail">${a.addr}, ${a.city}, ${a.state} – ${a.pin}</div></div>
-      <div class="cod-box"><span class="cod-lbl">Amount to Pay on Delivery</span><span class="cod-amt">₹${finalTotal.toLocaleString('en-IN')}</span></div>
-      <button class="btn-primary" onclick="closeAll();showPage('home')">Continue Shopping 🛍️</button>
-      <button class="btn-secondary" style="margin-top:12px;" onclick="closeAll();openTrack()">Track Order 📦</button>
-    </div>`;
-}
+    
     // ── TRACK ──
     function buildTrackCard(o) {
       const cur = STATUSES.indexOf((o.status || 'processing').toLowerCase());
